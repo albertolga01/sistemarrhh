@@ -1,0 +1,38 @@
+.addUser {
+    float: right;
+}
+@font-face { 
+    font-family: "DejaVuSans"; 
+    src:url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype"); 
+}
+
+.fuenteCarta{
+    font-size:26px;
+    font-family:DejaVuSans;
+}
+
+.ocancelada { position: relative; float: right;} 
+.ocancelada::before { 
+    content: "";
+    background-image:url('../dist/img/prueba.png');
+    background-size: 500px 500px; 
+    background-repeat: no-repeat;
+    position: absolute; 
+    display: grid; 
+    justify-content: center; 
+    align-content: center; 
+    top: -500px; 
+    bottom: 0; 
+    left: -200; 
+    right: 0; 
+    opacity: 0.1; 
+    color: red; 
+    z-index: 1; 
+    width: 500px;
+    height:500px;
+}
+
+.tablaCheckList{
+    width: 50%;
+    margin: 0 auto;
+}

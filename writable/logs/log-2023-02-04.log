@@ -1,0 +1,66 @@
+CRITICAL - 2023-02-04 11:28:28 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\EmpleadoController.php on line 73.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\EmpleadoController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\EmpleadoController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\EmpleadoController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\EmpleadoController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-04 11:29:53 --> syntax error, unexpected identifier "print_r"
+in APPPATH\Controllers\EmpleadoController.php on line 74.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\EmpleadoController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\EmpleadoController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\EmpleadoController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\EmpleadoController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-04 11:30:09 --> syntax error, unexpected token "return"
+in APPPATH\Controllers\EmpleadoController.php on line 74.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\EmpleadoController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\EmpleadoController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\EmpleadoController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\EmpleadoController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-04 11:56:44 --> syntax error, unexpected token "if"
+in APPPATH\Controllers\EmpleadoController.php on line 74.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\EmpleadoController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\EmpleadoController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\EmpleadoController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\EmpleadoController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-04 11:59:43 --> Undefined variable $data
+in APPPATH\Controllers\EmpleadoController.php on line 102.
+ 1 APPPATH\Controllers\EmpleadoController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'APPPATH\\Controllers\\EmpleadoController.php', 102)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->editarEmpleado()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-04 12:28:34 --> Undefined variable $id
+in APPPATH\Controllers\EmpleadoController.php on line 76.
+ 1 APPPATH\Controllers\EmpleadoController.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'APPPATH\\Controllers\\EmpleadoController.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->editarEmpleado()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-04 12:29:16 --> unlink(../public/uploads/1675530262_a8ba3d25783eb30c14f9.jpg): No such file or directory
+in APPPATH\Controllers\EmpleadoController.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(../public/uploads/1675530262_a8ba3d25783eb30c14f9.jpg): No such file or directory', 'APPPATH\\Controllers\\EmpleadoController.php', 79)
+ 2 APPPATH\Controllers\EmpleadoController.php(79): unlink('../public/uploads/1675530262_a8ba3d25783eb30c14f9.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->editarEmpleado()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-04 12:30:46 --> unlink(C:\xampp\htdocs\sistemRH\public\uploads1675530262_a8ba3d25783eb30c14f9.jpg): No such file or directory
+in APPPATH\Controllers\EmpleadoController.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\sistemRH\\public\\uploads1675530262_a8ba3d25783eb30c14f9.jpg): No such file or directory', 'APPPATH\\Controllers\\EmpleadoController.php', 79)
+ 2 APPPATH\Controllers\EmpleadoController.php(79): unlink('FCPATH\\public\\uploads1675530262_a8ba3d25783eb30c14f9.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->editarEmpleado()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

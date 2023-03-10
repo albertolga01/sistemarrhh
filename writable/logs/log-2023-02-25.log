@@ -1,0 +1,81 @@
+CRITICAL - 2023-02-25 10:05:28 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, string given, called in C:\xampp\htdocs\sistemRH\app\Controllers\UniformeController.php on line 17
+in SYSTEMPATH\BaseModel.php on line 568.
+ 1 APPPATH\Controllers\UniformeController.php(17): CodeIgniter\BaseModel->findAll('nombre', 'tallaCamisa')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-25 10:05:41 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\uniformes\uniformes.php on line 66.
+ 1 APPPATH\Views\uniformes\uniformes.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'APPPATH\\Views\\uniformes\\uniformes.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\uniformes\\uniformes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('uniformes/uniformes', [], true)
+ 5 APPPATH\Controllers\UniformeController.php(19): view('uniformes/uniformes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-25 10:05:55 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, string given, called in C:\xampp\htdocs\sistemRH\app\Controllers\UniformeController.php on line 17
+in SYSTEMPATH\BaseModel.php on line 568.
+ 1 APPPATH\Controllers\UniformeController.php(17): CodeIgniter\BaseModel->findAll('nombre', 'tallaCamisa')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-25 10:13:03 --> mysqli_result::fetch_object(): Argument #1 ($class) must be a valid class name, nombre given
+in SYSTEMPATH\Database\MySQLi\Result.php on line 148.
+ 1 SYSTEMPATH\Database\MySQLi\Result.php(148): mysqli_result->fetch_object('nombre')
+ 2 SYSTEMPATH\Database\BaseResult.php(149): CodeIgniter\Database\MySQLi\Result->fetchObject('nombre')
+ 3 SYSTEMPATH\Database\BaseResult.php(106): CodeIgniter\Database\BaseResult->getCustomResultObject('nombre')
+ 4 SYSTEMPATH\Model.php(224): CodeIgniter\Database\BaseResult->getResult('nombre')
+ 5 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\UniformeController.php(17): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-25 10:19:19 --> Trying to access array offset on value of type null
+in APPPATH\Views\uniformes\uniformes.php on line 67.
+ 1 APPPATH\Views\uniformes\uniformes.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\uniformes\\uniformes.php', 67)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\uniformes\\uniformes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('uniformes/uniformes', [], true)
+ 5 APPPATH\Controllers\UniformeController.php(19): view('uniformes/uniformes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-25 10:19:59 --> Undefined array key "id"
+in APPPATH\Views\uniformes\uniformes.php on line 67.
+ 1 APPPATH\Views\uniformes\uniformes.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\uniformes\\uniformes.php', 67)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\uniformes\\uniformes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('uniformes/uniformes', [], true)
+ 5 APPPATH\Controllers\UniformeController.php(19): view('uniformes/uniformes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-25 10:20:09 --> Undefined array key "id"
+in APPPATH\Views\uniformes\uniformes.php on line 67.
+ 1 APPPATH\Views\uniformes\uniformes.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\uniformes\\uniformes.php', 67)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\uniformes\\uniformes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('uniformes/uniformes', [], true)
+ 5 APPPATH\Controllers\UniformeController.php(19): view('uniformes/uniformes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-25 10:20:21 --> Undefined array key "id"
+in APPPATH\Views\uniformes\uniformes.php on line 67.
+ 1 APPPATH\Views\uniformes\uniformes.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\uniformes\\uniformes.php', 67)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\uniformes\\uniformes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('uniformes/uniformes', [], true)
+ 5 APPPATH\Controllers\UniformeController.php(19): view('uniformes/uniformes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\UniformeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UniformeController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

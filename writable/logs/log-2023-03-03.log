@@ -1,0 +1,193 @@
+ERROR - 2023-03-03 10:10:53 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'adminpanel', 3306, '', 0)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /home/jkmpg7ol/public_html/sistemarrhh/app/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grup...')
+#6 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /home/jkmpg7ol/public_html/sistemarrhh/app/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grup...')
+#5 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+#6 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-03 10:10:53 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH/Database/BaseConnection.php on line 418.
+ 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:', [...], false)
+ 3 APPPATH/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grupopetromar.com')
+ 5 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+ 6 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-03 14:05:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'jkmpg7ol_sistemas'@'dedi-262197.serviciospetromar.com' to database 'adminpanel' in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php(171): mysqli->real_connect('162.214.97.39', 'jkmpg7ol_sistem...', '5R3U6vvQWI0a', 'adminpanel', 3306, '', 0)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /home/jkmpg7ol/public_html/sistemarrhh/app/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grup...')
+#6 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'dedi-262197.serviciospetromar.com' to database 'adminpanel' in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /home/jkmpg7ol/public_html/sistemarrhh/app/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grup...')
+#5 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+#6 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-03 14:05:48 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'dedi-262197.serviciospetromar.com' to database 'adminpanel'
+in SYSTEMPATH/Database/BaseConnection.php on line 418.
+ 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:', [...], false)
+ 3 APPPATH/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grupopetromar.com')
+ 5 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+ 6 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-03 14:12:41 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'jkmpg7ol_sistemas'@'localhost' to database 'adminpanel' in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php(171): mysqli->real_connect('localhost', 'jkmpg7ol_sistem...', '5R3U6vvQWI0a', 'adminpanel', 3306, '', 0)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /home/jkmpg7ol/public_html/sistemarrhh/app/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grup...')
+#6 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database 'adminpanel' in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /home/jkmpg7ol/public_html/sistemarrhh/app/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grup...')
+#5 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+#6 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-03 14:12:41 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database 'adminpanel'
+in SYSTEMPATH/Database/BaseConnection.php on line 418.
+ 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:', [...], false)
+ 3 APPPATH/Models/Usuario.php(15): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/LoginController.php(20): App\Models\Usuario->buscarUsuarioPorEmail('desarrollo@grupopetromar.com')
+ 5 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\LoginController->validarIngreso()
+ 6 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-03 14:14:40 --> Class 'Config\Database' not found
+in SYSTEMPATH/Debug/Toolbar/Collectors/Database.php on line 249.
+ 1 SYSTEMPATH/Debug/Toolbar/Collectors/Database.php(69): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 2 SYSTEMPATH/Debug/Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 3 SYSTEMPATH/Config/Services.php(714): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 4 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 5 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 6 SYSTEMPATH/Config/Services.php(709): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 7 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar()
+ 8 SYSTEMPATH/Filters/DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+ 9 SYSTEMPATH/Filters/Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+10 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\Filters\Filters->run('/', 'after')
+11 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-03 14:15:19 --> Class 'Config\Database' not found
+in SYSTEMPATH/Debug/Toolbar/Collectors/Database.php on line 249.
+ 1 SYSTEMPATH/Debug/Toolbar/Collectors/Database.php(69): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 2 SYSTEMPATH/Debug/Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 3 SYSTEMPATH/Config/Services.php(714): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 4 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 5 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 6 SYSTEMPATH/Config/Services.php(709): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 7 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar()
+ 8 SYSTEMPATH/Filters/DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+ 9 SYSTEMPATH/Filters/Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+10 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\Filters\Filters->run('/', 'after')
+11 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-03 14:15:45 --> Class 'Config\Database' not found
+in SYSTEMPATH/Debug/Toolbar/Collectors/Database.php on line 249.
+ 1 SYSTEMPATH/Debug/Toolbar/Collectors/Database.php(69): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 2 SYSTEMPATH/Debug/Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 3 SYSTEMPATH/Config/Services.php(714): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 4 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 5 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 6 SYSTEMPATH/Config/Services.php(709): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 7 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar()
+ 8 SYSTEMPATH/Filters/DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+ 9 SYSTEMPATH/Filters/Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+10 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\Filters\Filters->run('/', 'after')
+11 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-03 14:16:26 --> Class 'Config\Database' not found
+in SYSTEMPATH/Debug/Toolbar/Collectors/Database.php on line 249.
+ 1 SYSTEMPATH/Debug/Toolbar/Collectors/Database.php(69): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 2 SYSTEMPATH/Debug/Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 3 SYSTEMPATH/Config/Services.php(714): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 4 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 5 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 6 SYSTEMPATH/Config/Services.php(709): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 7 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar()
+ 8 SYSTEMPATH/Filters/DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+ 9 SYSTEMPATH/Filters/Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+10 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\Filters\Filters->run('/', 'after')
+11 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-03 14:16:31 --> Class 'Config\Database' not found
+in SYSTEMPATH/Debug/Toolbar/Collectors/Database.php on line 249.
+ 1 SYSTEMPATH/Debug/Toolbar/Collectors/Database.php(69): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 2 SYSTEMPATH/Debug/Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 3 SYSTEMPATH/Config/Services.php(714): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 4 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 5 SYSTEMPATH/Config/BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 6 SYSTEMPATH/Config/Services.php(709): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 7 SYSTEMPATH/Config/BaseService.php(253): CodeIgniter\Config\Services::toolbar()
+ 8 SYSTEMPATH/Filters/DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+ 9 SYSTEMPATH/Filters/Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+10 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\Filters\Filters->run('/', 'after')
+11 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-03 15:00:52 --> Call to a member function insert() on null
+in APPPATH/Controllers/HijoController.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\HijoController->guardarHijo()
+ 2 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HijoController))
+ 3 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

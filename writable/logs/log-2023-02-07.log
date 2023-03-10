@@ -1,0 +1,55 @@
+CRITICAL - 2023-02-07 10:26:36 --> Undefined array key "id"
+in APPPATH\Views\empleados\empleadoBaja.php on line 67.
+ 1 APPPATH\Views\empleados\empleadoBaja.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\empleados\\empleadoBaja.php', 67)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\empleadoBaja.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/empleadoBaja', [], true)
+ 5 APPPATH\Controllers\EmpleadoController.php(19): view('empleados/empleadoBaja', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->ViewBajaindex()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-07 10:27:08 --> Undefined array key "id"
+in APPPATH\Views\empleados\empleadoBaja.php on line 67.
+ 1 APPPATH\Views\empleados\empleadoBaja.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\empleados\\empleadoBaja.php', 67)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\empleadoBaja.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/empleadoBaja', [], true)
+ 5 APPPATH\Controllers\EmpleadoController.php(19): view('empleados/empleadoBaja', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->ViewBajaindex()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-07 10:27:27 --> Undefined array key "id"
+in APPPATH\Views\empleados\empleado.php on line 75.
+ 1 APPPATH\Views\empleados\empleado.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\empleados\\empleado.php', 75)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\empleado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/empleado', [], true)
+ 5 APPPATH\Controllers\EmpleadoController.php(13): view('empleados/empleado', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-07 10:28:10 --> Undefined array key "id"
+in APPPATH\Views\empleados\empleado.php on line 75.
+ 1 APPPATH\Views\empleados\empleado.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\empleados\\empleado.php', 75)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\empleado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/empleado', [], true)
+ 5 APPPATH\Controllers\EmpleadoController.php(13): view('empleados/empleado', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-07 10:28:12 --> Undefined array key "id"
+in APPPATH\Views\empleados\empleado.php on line 75.
+ 1 APPPATH\Views\empleados\empleado.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\empleados\\empleado.php', 75)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\empleado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/empleado', [], true)
+ 5 APPPATH\Controllers\EmpleadoController.php(13): view('empleados/empleado', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

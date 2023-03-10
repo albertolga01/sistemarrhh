@@ -1,0 +1,38 @@
+CRITICAL - 2023-02-13 10:18:16 --> unlink(C:\xampp\htdocs\sistemRH\public/uploads/1675449442_f5e5deb06ed318d1ae44.jpeg): No such file or directory
+in APPPATH\Controllers\EmpleadoController.php on line 83.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\sistemRH\\public/uploads/1675449442_f5e5deb06ed318d1ae44.jpeg): No such file or directory', 'APPPATH\\Controllers\\EmpleadoController.php', 83)
+ 2 APPPATH\Controllers\EmpleadoController.php(83): unlink('FCPATH\\public/uploads/1675449442_f5e5deb06ed318d1ae44.jpeg')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->editarEmpleado()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-13 13:02:35 --> Class "App\Controllers\Date" not found
+in APPPATH\Controllers\EmpleadoController.php on line 152.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->deleteEmpleado('3')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-13 13:06:37 --> Class "App\Controllers\Date" not found
+in APPPATH\Controllers\EmpleadoController.php on line 152.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->deleteEmpleado('3')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-13 13:07:19 --> Class "App\Controllers\Date" not found
+in APPPATH\Controllers\EmpleadoController.php on line 153.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->deleteEmpleado('3')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-13 13:10:08 --> Class "App\Controllers\Date" not found
+in APPPATH\Controllers\EmpleadoController.php on line 154.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->deleteEmpleado('3')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-13 13:14:08 --> Class "App\Controllers\Date" not found
+in APPPATH\Controllers\EmpleadoController.php on line 154.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->deleteEmpleado('3')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,36 @@
+CRITICAL - 2023-02-10 13:41:29 --> syntax error, unexpected token ";"
+in APPPATH\Views\empleados\cartaEmpleado.php on line 31.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/cartaEmpleado', [], true)
+ 3 APPPATH\Controllers\EmpleadoController.php(166): view('empleados/cartaEmpleado', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->cartaEmpleado('1')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-10 13:59:58 --> Unclosed '{' on line 39
+in APPPATH\Views\empleados\cartaEmpleado.php on line 97.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/cartaEmpleado', [], true)
+ 3 APPPATH\Controllers\EmpleadoController.php(166): view('empleados/cartaEmpleado', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->cartaEmpleado('1')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-10 14:01:02 --> Unclosed '{' on line 39
+in APPPATH\Views\empleados\cartaEmpleado.php on line 97.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/cartaEmpleado', [], true)
+ 3 APPPATH\Controllers\EmpleadoController.php(166): view('empleados/cartaEmpleado', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->cartaEmpleado('1')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-10 14:01:30 --> Unclosed '{' on line 39
+in APPPATH\Views\empleados\cartaEmpleado.php on line 97.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('empleados/cartaEmpleado', [], true)
+ 3 APPPATH\Controllers\EmpleadoController.php(166): view('empleados/cartaEmpleado', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\EmpleadoController->cartaEmpleado('1')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

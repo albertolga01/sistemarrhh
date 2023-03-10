@@ -1,0 +1,80 @@
+CRITICAL - 2023-03-08 10:57:17 --> Class 'App\Models\Candidato' not found
+in APPPATH/Controllers/CandidatoController.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\CandidatoController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CandidatoController))
+ 3 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-08 11:07:14 --> Invalid argument supplied for foreach()
+in APPPATH/Views/candidatos/candidatos.php on line 71.
+ 1 APPPATH/Views/candidatos/candidatos.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH/Views/candidatos/candidatos.php', 71, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/candidatos/candidatos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render('candidatos/candidatos', [], true)
+ 5 APPPATH/Controllers/CandidatoController.php(16): view('candidatos/candidatos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\CandidatoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CandidatoController))
+ 8 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-08 12:19:27 --> Invalid file: actividades/actividades.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('actividades/actividades.php')
+ 2 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render('actividades/actividades', [], true)
+ 3 APPPATH/Controllers/ActividadController.php(17): view('actividades/actividades', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ActividadController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ActividadController))
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-08 12:51:58 --> syntax error, unexpected ';', expecting ')'
+in APPPATH/Controllers/EmpleadoController.php on line 246.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH/Controllers/EmpleadoController.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\EmpleadoController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\EmpleadoController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\EmpleadoController')
+ 5 SYSTEMPATH/CodeIgniter.php(877): class_exists('\\App\\Controllers\\EmpleadoController', true)
+ 6 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-08 13:15:34 --> mysqli_sql_exception: Unknown column 'usuario.username' in 'field list' in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php(292): mysqli->query('SELECT `usuario...', 0)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `usuario...')
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `usuario...')
+#3 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 /home/jkmpg7ol/public_html/sistemarrhh/system/Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/jkmpg7ol/public_html/sistemarrhh/system/BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/ActividadController.php(18): CodeIgniter\BaseModel->findAll()
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\ActividadController->index()
+#8 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ActividadController))
+#9 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-03-08 13:15:34 --> Call to a member function getResult() on bool
+in SYSTEMPATH/Model.php on line 224.
+ 1 SYSTEMPATH/BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH/Controllers/ActividadController.php(18): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ActividadController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ActividadController))
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-08 13:19:33 --> mysqli_sql_exception: Unknown column 'usuario.username' in 'field list' in /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/MySQLi/Connection.php(292): mysqli->query('SELECT `activid...', 0)
+#1 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `activid...')
+#2 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `activid...')
+#3 /home/jkmpg7ol/public_html/sistemarrhh/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `activid...', Array, false)
+#4 /home/jkmpg7ol/public_html/sistemarrhh/system/Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/jkmpg7ol/public_html/sistemarrhh/system/BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/jkmpg7ol/public_html/sistemarrhh/app/Controllers/ActividadController.php(18): CodeIgniter\BaseModel->findAll()
+#7 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(927): App\Controllers\ActividadController->index()
+#8 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ActividadController))
+#9 /home/jkmpg7ol/public_html/sistemarrhh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/jkmpg7ol/public_html/sistemarrhh/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-03-08 13:19:33 --> Call to a member function getResult() on bool
+in SYSTEMPATH/Model.php on line 224.
+ 1 SYSTEMPATH/BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH/Controllers/ActividadController.php(18): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\ActividadController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ActividadController))
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

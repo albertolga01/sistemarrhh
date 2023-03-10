@@ -1,0 +1,28 @@
+CRITICAL - 2023-03-04 12:27:25 --> syntax error, unexpected '")</script>"' (T_CONSTANT_ENCAPSED_STRING)
+in APPPATH/Views/hijos/hijos.php on line 54.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render('hijos/hijos', [], true)
+ 3 APPPATH/Controllers/HijoController.php(19): view('hijos/hijos', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\HijoController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HijoController))
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-04 12:28:37 --> syntax error, unexpected '")</script>"' (T_CONSTANT_ENCAPSED_STRING)
+in APPPATH/Views/hijos/hijos.php on line 59.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render('hijos/hijos', [], true)
+ 3 APPPATH/Controllers/HijoController.php(19): view('hijos/hijos', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\HijoController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HijoController))
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-04 12:34:48 --> Object of class DateInterval could not be converted to string
+in APPPATH/Views/hijos/hijos.php on line 89.
+ 1 SYSTEMPATH/View/View.php(213): include()
+ 2 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render('hijos/hijos', [], true)
+ 4 APPPATH/Controllers/HijoController.php(19): view('hijos/hijos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\HijoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HijoController))
+ 7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
