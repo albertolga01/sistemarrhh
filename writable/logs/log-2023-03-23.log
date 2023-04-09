@@ -1,0 +1,6 @@
+CRITICAL - 2023-03-23 12:43:29 --> Call to a member function getRandomName() on null
+in APPPATH/Controllers/EmpleadoController.php on line 38.
+ 1 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\EmpleadoController->guardarEmpleado()
+ 2 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 3 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

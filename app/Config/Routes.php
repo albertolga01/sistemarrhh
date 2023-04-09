@@ -56,19 +56,31 @@ $routes->post('editarEmpleado','EmpleadoController::editarEmpleado');
 $routes->get('deleteEmpleado/(:num)/(:num)','EmpleadoController::deleteEmpleado/$1/$2');
 $routes->get('altaEmpleado/(:num)','EmpleadoController::altaEmpleado/$1');
 
+$routes->get('expedientesEmpleado/(:num)','EmpleadoController::expedientesEmpleado/$1');
+
 $routes->get('cartaEmpleado/(:num)','EmpleadoController::cartaEmpleado/$1');
 $routes->get('checkListEmpleado/(:num)','EmpleadoController::checkListEmpleado/$1');
+$routes->get('cartaGuarderia/(:num)','EmpleadoController::cartaGuarderia/$1');
+$routes->post('cartaFonacot','EmpleadoController::cartaFonacot');
 $routes->get('empleadosBaja','EmpleadoController::ViewBajaindex');
+
 
 
 $routes->get('uniformes','UniformeController::index');
 $routes->post('guardarUniforme','UniformeController::guardarUniforme');
+$routes->post('editarUniforme','UniformeController::editarUniforme');
+$routes->get('eliminarUniforme/(:num)/(:num)','UniformeController::eliminarUniforme/$1/$2');
 
 $routes->get('hijos','HijoController::index');
 $routes->post('guardarHijo','HijoController::guardarHijo');
+$routes->post('editarHijo','HijoController::editarHijo');
+$routes->get('eliminarHijo/(:num)/(:num)','HijoController::eliminarHijo/$1/$2');
 
 $routes->get('candidatos','CandidatoController::index');
 $routes->post('guardarCandidato','CandidatoController::guardarCandidato');
+$routes->post('editarCandidato','CandidatoController::editarCandidato');
+$routes->get('eliminarCandidato/(:num)/(:num)','CandidatoController::eliminarCandidato/$1/$2');
+
 
 
 $routes->get('actividades','ActividadController::index');

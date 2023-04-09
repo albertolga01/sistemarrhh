@@ -16,6 +16,7 @@ class UniformeController extends Controller{
         $empleado = new Empleado();                 
         $data['pageTitle']= 'Uniformes';
         $data['empleados'] = $empleado->select('id,nombre,tallaCamisa,tallaPantalon,tallaBotas')->where('activo',1)->findAll();
+        $data['empleadosUpdate'] = $empleado->select('id,nombre,tallaCamisa,tallaPantalon,tallaBotas')->where('activo',1)->findAll();
         $data['uniformes'] = $uniforme->findAll();
         return view('uniformes/uniformes',$data);        
     }
@@ -59,5 +60,63 @@ class UniformeController extends Controller{
         $actividad->insert($datosActividad); 
         return $this->response->redirect(base_url('/uniformes'));
     }
+
+    public function editarUniforme(){
+        $uniforme = new Uniforme();
+        $empleado = new Empleado();   
+
+        $id = $this->request->getVar('id');
+        $camisa = $this->request->getVar('camisaEmpleado');        
+        if($camisa != 1){$camisa = 0;}
+
+        $pantalon = $this->request->getVar('pantalonEmpleado');
+        if($pantalon != 1){$pantalon = 0;}
+
+        $botas = $this->request->getVar('botasEmpleado');
+        if($botas != 1){$botas = 0;}
+
+        $idEmpleado = $this->request->getVar('idEmpleado');
+        $nombreEmpleado = $empleado->select('nombre')->where('id',$idEmpleado)->first(); 
+
+        $datos=[              
+            'idEmpleado' => $idEmpleado,
+            'nombreEmpleado'=> $nombreEmpleado['nombre'],
+            'camisa'=>$camisa,
+            'pantalon'=>$pantalon,
+            'botas'=>$botas,
+            'fechaEntrega' => $this->request->getVar('fechaEntrega') 
+        ];
+
+        $uniforme->update($id,$datos); 
+
+        $actividad = new Actividad();            
+        $datosEmpleado = $empleado->where('id',$idEmpleado)->first(); 
+        $cambio = "Se actualizo uniformes al empleado " . $datosEmpleado['nombre'];        
+        $hoy = new Time();
+        $datosActividad=[
+            'idUsuario' => $this->request->getVar('Username'),
+            'cambio' => $cambio,
+            'fechaCambio' => $hoy
+        ];
+        $actividad->insert($datosActividad); 
+        return $this->response->redirect(base_url('/uniformes'));
+    }
+
+    public function eliminarUniforme($id=null,$username=null){
+        $uniforme = new Uniforme();
+        $uniforme->where('id',$id)->delete($id);
+
+        $actividad = new Actividad();                   
+        $cambio = "Se Elimino el Uniforme con el id:  " . $id;        
+        $hoy = new Time();
+        $datosActividad=[
+            'idUsuario' => $username,
+            'cambio' => $cambio,
+            'fechaCambio' => $hoy
+        ];
+        $actividad->insert($datosActividad); 
+        return $this->response->redirect(base_url('/uniformes'));
+    }
+
 }
 ?>

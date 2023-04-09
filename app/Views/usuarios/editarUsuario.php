@@ -16,6 +16,14 @@
                 <input type="email" name="email" class="form-control" placeholder="Enter Email" value="<?= $usuario['email']?>" required>
             </div>
             <div class="form-group">
+                <label> tipo </label>
+                <select class="form-control" name="tipo" id="tipo" required>
+                    <option <?php if($usuario['tipo']=="1"){echo"selected";}?> value=1>Administrador</option>
+                    <option <?php if($usuario['tipo']=="2"){echo"selected";}?> value=2>Normal</option>
+                    <option <?php if($usuario['tipo']=="3"){echo"selected";}?> value=3>Solo Lectura</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" placeholder="Enter Password" value="<?= $usuario['password']?>" required>
             </div>

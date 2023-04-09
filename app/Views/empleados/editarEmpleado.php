@@ -8,14 +8,25 @@
 
 <div class="card col-md-12">
     <div class="card-header" style="margin-left: auto;">
+     
+    <?php if(session('tipo') == 1){?> 
+       
+    <?php }?>
+
+
         <button type="button" class="btn btn-warning btn-lg" id="btn-imprimir" onClick="imprimirEmpleado('<?= $empleado['nombre']?>')"><i class="fas fa-print"></i>PRINT</button>
+
+        <a  href="<?= base_url('cartaGuarderia/'.$empleado['id']);?>" target="_blank"><button type="button" class="btn btn-outline-primary btn-lg" id="btn-cartaGuarderia"><i class="nav-icon 	fas fa-baby-carriage"></i> GUARDERIA</button></a>
+
+        <button type="button" class="btn btn-outline-primary btn-lg" id="btn-cartaFonacot" data-toggle="modal" data-target="#ModalFonacot"> <i class="nav-icon far fa-file-alt"></i> FONACOT</button>
+        
         <?php if($empleado['activo'] == 0){?>
-            <a  href="<?= base_url('cartaEmpleado/'.$empleado['id']);?>" target="_blank"><button type="button" class="btn btn-secondary btn-lg" id="btn-cartaRecomendacion"><i class="fas fa-download"></i> CARTA</button></a>
+            <a  href="<?= base_url('cartaEmpleado/'.$empleado['id']);?>" target="_blank"><button type="button" class="btn btn-outline-secondary btn-lg" id="btn-cartaRecomendacion"><i class="fas fa-download"></i> CARTA</button></a>
         <?php }?>
         <?php if($empleado['activo'] == 0){?>
-            <a  href="<?= base_url('checkListEmpleado/'.$empleado['id']);?>" target="_blank"><button type="button" class="btn btn-secondary btn-lg" id="btn-cartaRecomendacion"><i class="fas fa-download"></i> CHECKLIST BAJA</button></a>
+            <a  href="<?= base_url('checkListEmpleado/'.$empleado['id']);?>" target="_blank"><button type="button" class="btn btn-outline-secondary btn-lg" id="btn-cartaRecomendacion"><i class="fas fa-download"></i> CHECKLIST BAJA</button></a>
         <?php }?>
-        <button type="button" class="btn btn-danger btn-lg" id="btn-cancelar" onClick="history.go(-1);"><i class="fa fa-times-circle"></i> CANCELAR</button>
+        <button type="button" class="btn btn-outline-danger btn-lg" id="btn-cancelar" onClick="history.go(-1);"><i class="fa fa-times-circle"></i> CANCELAR</button>
     </div> <!-- /.card-header -->  
 </div>
 
@@ -80,7 +91,7 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputTelefono">Telefono</label>
-                        <input type="tel" class="form-control"  id="telefonoEmpleado" name="telefonoEmpleado"  maxlength="10" required value="<?= $empleado['telefono']?>">            
+                        <input type="tel" class="form-control"  id="telefonoEmpleado" name="telefonoEmpleado"  maxlength="10"  value="<?= $empleado['telefono']?>">            
                     </div>
                 </div>
 
@@ -137,15 +148,22 @@
                         <input type="number" readonly class="form-control" id="montoDescuento" name="montoDescuento" placeholder="Monto Descuento" value="<?= $empleado['montoDescuento']?>">
                     </div>
                     <div class="form-group col-md-2">
+                        <label for="inputMonto">Tipo Credito</label>
+                        <select id="tipoCredito" class="form-control"  name="tipoCredito" disabled>  
+                            <option <?php if($empleado['tipoCredito']=="N/A"){echo"selected";}?> value="N/A" selected>N/A</option>                                  
+                            <option  <?php if($empleado['tipoCredito']=="Cuota fija"){echo"selected";}?> value="Cuota fija" >Cuota fija</option>
+                            <option <?php if($empleado['tipoCredito']=="En veces salario mínimo"){echo"selected";}?> value="En veces salario mínimo">En veces salario mínimo</option>
+                            <option <?php if($empleado['tipoCredito']=="Porcentaje"){echo"selected";}?>  value="Porcentaje">Porcentaje</option>                                              
+                        </select>                           
+                    </div> 
+
+                    <div class="form-group col-md-2">
                         <div class="custom-control custom-switch" style="margin-top: 35px;display: flex;justify-content:center;">
                             <input type="checkbox" class="custom-control-input" id="fonacotEmpleado" name="fonacotEmpleado" value=1 onchange="habilitarInputs()" <?php if($empleado['fonacotEmpleado']=="1"){echo"checked";}?>>
                             <label class="custom-control-label" for="fonacotEmpleado">Fonacot</label>
                         </div> 
                     </div> 
-                    <div class="form-group col-md-2">
-                        <label for="inputCurp">No. Credito</label>
-                        <input type="text" readonly class="form-control" id="numeroCredito" name="numeroCredito" placeholder="No. Credito" value="<?= $empleado['numeroCredito']?>">
-                    </div>
+                 
                 </div>
 
                 <!-- INPUT AREA, PUESTO, TIPO DE PERFIL, SALARIO-->
@@ -153,85 +171,87 @@
                     <div class="form-group col-md-4">
                         <label for="inputArea">Area</label>                            
                         <select id="areaEmpleado" class="form-control"  name="areaEmpleado" required>
-                            <option <?php if($empleado['area']=="Rio Presidio"){echo"selected";}?> value="Rio Presidio">Rio Presidio</option>
-                            <option <?php if($empleado['area']=="Múnich"){echo"selected";}?> value="Múnich">Múnich</option>
-                            <option <?php if($empleado['area']=="Insurgentes"){echo"selected";}?> value="Insurgentes">Insurgentes </option>
-                            <option <?php if($empleado['area']=="Santa Fe"){echo"selected";}?> value="Santa Fe">Santa Fe </option>
-                            <option <?php if($empleado['area']=="López Sáenz"){echo"selected";}?> value="López Sáenz">López Sáenz </option>
-                            <option <?php if($empleado['area']=="Libramiento"){echo"selected";}?> value="Libramiento">Libramiento</option>                                                            
-                            <option <?php if($empleado['area']=="Ley del Mar"){echo"selected";}?> value="Ley del Mar">Ley del Mar</option>
-                            <option <?php if($empleado['area']=="Operaciones"){echo"selected";}?> value="Operaciones">Operaciones </option>
-                            <option <?php if($empleado['area']=="Competro"){echo"selected";}?> value="Competro">Competro </option>
                             <option <?php if($empleado['area']=="Administrativo"){echo"selected";}?> value="Administrativo">Administrativo</option>
+                            <option <?php if($empleado['area']=="Competro"){echo"selected";}?> value="Competro">Competro </option>
                             <option <?php if($empleado['area']=="Contabilidad"){echo"selected";}?> value="Contabilidad">Contabilidad </option>
-                            <option <?php if($empleado['area']=="Recursos Humanos"){echo"selected";}?> value="Recursos Humanos">Recursos Humanos </option>
-                            <option <?php if($empleado['area']=="Sistemas y Desarrollo"){echo"selected";}?> value="Sistemas y Desarrollo">Sistemas y Desarrollo</option>
-                            <option <?php if($empleado['area']=="Logística"){echo"selected";}?> value="Logística">Logística </option>
                             <option <?php if($empleado['area']=="Gas Unión"){echo"selected";}?> value="Gas Unión">Gas Unión</option>
+                            <option <?php if($empleado['area']=="Insurgentes"){echo"selected";}?> value="Insurgentes">Insurgentes </option>
+                            <option <?php if($empleado['area']=="La Caja"){echo"selected";}?> value="La Caja">La Caja</option>
+                            <option <?php if($empleado['area']=="Ley del Mar"){echo"selected";}?> value="Ley del Mar">Ley del Mar</option>
+                            <option <?php if($empleado['area']=="Libramiento"){echo"selected";}?> value="Libramiento">Libramiento</option>                                                            
+                            <option <?php if($empleado['area']=="Logística"){echo"selected";}?> value="Logística">Logística </option>
+                            <option <?php if($empleado['area']=="López Sáenz"){echo"selected";}?> value="López Sáenz">López Sáenz </option>
+                            <option <?php if($empleado['area']=="Múnich"){echo"selected";}?> value="Múnich">Múnich</option>
+                            <option <?php if($empleado['area']=="Operaciones"){echo"selected";}?> value="Operaciones">Operaciones </option>
+                            <option <?php if($empleado['area']=="Recursos Humanos"){echo"selected";}?> value="Recursos Humanos">Recursos Humanos </option>
+                            <option <?php if($empleado['area']=="Rio Presidio"){echo"selected";}?> value="Rio Presidio">Rio Presidio</option>
+                            <option <?php if($empleado['area']=="Santa Fe"){echo"selected";}?> value="Santa Fe">Santa Fe </option>
+                            <option <?php if($empleado['area']=="Sistemas y Desarrollo"){echo"selected";}?> value="Sistemas y Desarrollo">Sistemas y Desarrollo</option>
                         </select>         
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputPuesto">Puesto</label>                      
                         <select id="puestoEmpleado" class="form-control"  name="puestoEmpleado" required>                    
-                            <option <?php if($empleado['puesto']=="Despachador"){echo"selected";}?>  value="Despachador">Despachador</option>                     
-                            <option <?php if($empleado['puesto']=="Supervisor Operativo"){echo"selected";}?>  value="Supervisor Operativo">Supervisor Operativo</option>
-                            <option <?php if($empleado['puesto']=="Responsable Operativo y Logistica"){echo"selected";}?>  value="Responsable Operativo y Logistica">Responsable Operativo y Logistica</option>
-                            <option <?php if($empleado['puesto']=="Encargado de Turno"){echo"selected";}?>  value="Encargado de Turno">Encargado de Turno</option>
-                            <option <?php if($empleado['puesto']=="Mantenimiento"){echo"selected";}?>  value="Mantenimiento">Mantenimiento</option>
-                            <option <?php if($empleado['puesto']=="Limpieza"){echo"selected";}?>  value="Limpieza">Limpieza</option>
-                            <option <?php if($empleado['puesto']=="Servicio y Cortes"){echo"selected";}?> value="Servicio y Cortes">Servicio y Cortes</option>
-                            <option <?php if($empleado['puesto']=="Encargada de Servicio y Controles Internos"){echo"selected";}?>  value="Encargada de Servicio y Controles Internos">Encargada de Servicio y Controles Internos</option>
-                            <option <?php if($empleado['puesto']=="Pipero"){echo"selected";}?>  value="Pipero">Pipero</option>                                   
-                            <option <?php if($empleado['puesto']=="Seguridad"){echo"selected";}?>  value="Seguridad">Seguridad </option>
-                            <option <?php if($empleado['puesto']=="Cubre turno"){echo"selected";}?>  value="Cubre turno">Cubre turno </option>
-                            <option <?php if($empleado['puesto']=="Operación Gasolineras"){echo"selected";}?>  value="Operación Gasolineras">Operación Gasolineras </option>
-                            <option <?php if($empleado['puesto']=="Auxiliar de operaciones"){echo"selected";}?>  value="Auxiliar de operaciones">Auxiliar de operaciones </option>
-                            <option <?php if($empleado['puesto']=="Supervisor operativo de responsabilidad legal"){echo"selected";}?>  value="Supervisor operativo de responsabilidad legal">Supervisor operativo de responsabilidad legal  </option>
-                            <option <?php if($empleado['puesto']=="Auxiliar mantenimiento"){echo"selected";}?>  value="Auxiliar mantenimiento">Auxiliar mantenimiento </option>
-                            <option <?php if($empleado['puesto']=="Asistente de dirección"){echo"selected";}?>  value="Asistente de dirección">Asistente de dirección </option>
-                            <option <?php if($empleado['puesto']=="Asistente de dirección"){echo"selected";}?>  value="Encargado de Compras">Encargado de Compras </option>
-                            <option <?php if($empleado['puesto']=="Atención a clientes"){echo"selected";}?>  value="Atención a clientes">Atención a clientes  </option>
-                            <option <?php if($empleado['puesto']=="Ejecutivo de Negocios La Caja"){echo"selected";}?>  value="Ejecutivo de Negocios La Caja">Ejecutivo de Negocios La Caja</option>
-                            <option <?php if($empleado['puesto']=="Finanzas"){echo"selected";}?>  value="Finanzas">Finanzas</option>
-                            <option <?php if($empleado['puesto']=="Encargada Administrativa y Dependencias"){echo"selected";}?>  value="Encargada Administrativa y Dependencias">Encargada Administrativa y Dependencias </option>
-                            <option <?php if($empleado['puesto']=="Auxiliar Administrativo"){echo"selected";}?>  value="Auxiliar Administrativo">Auxiliar Administrativo </option>
-                            <option <?php if($empleado['puesto']=="Tesorería"){echo"selected";}?>  value="Tesorería">Tesorería </option>
-                            <option <?php if($empleado['puesto']=="Gerente Administrativo"){echo"selected";}?>  value="Gerente Administrativo">Gerente Administrativo </option>
-                            <option <?php if($empleado['puesto']=="Inmobiliaria"){echo"selected";}?>  value="Inmobiliaria">Inmobiliaria </option>
-                            <option <?php if($empleado['puesto']=="Responsable de Obras y Proyectos"){echo"selected";}?>  value="Responsable de Obras y Proyectos">Responsable de Obras y Proyectos </option>
-                            <option <?php if($empleado['puesto']=="Promoción y publicidad"){echo"selected";}?>  value="Promoción y publicidad">Promoción y publicidad  </option>
-                            <option <?php if($empleado['puesto']=="Contador General"){echo"selected";}?>  value="Contador General">Contador General </option>
-                            <option <?php if($empleado['puesto']=="Auxiliar Contable"){echo"selected";}?>  value="Auxiliar Contable">Auxiliar Contable  </option>
-                            <option <?php if($empleado['puesto']=="Control Interno"){echo"selected";}?>  value="Control Interno">Control Interno </option>
-                            <option <?php if($empleado['puesto']=="Encargada de Ingresos"){echo"selected";}?>  value="Encargada de Ingresos">Encargada de Ingresos </option>
-                            <option <?php if($empleado['puesto']=="Guardia de Seguridad"){echo"selected";}?>  value="Guardia de Seguridad">Guardia de Seguridad  </option>
-                            <option <?php if($empleado['puesto']=="Coordinador de Capacitación y Desarrollo"){echo"selected";}?>  value="Coordinador de Capacitación y Desarrollo">Coordinador de Capacitación y Desarrollo </option>
-                            <option <?php if($empleado['puesto']=="Reclutamiento y Selección"){echo"selected";}?>  value="Reclutamiento y Selección">Reclutamiento y Selección </option>
-                            <option <?php if($empleado['puesto']=="Operaciones Grupo Petromar"){echo"selected";}?> value="Operaciones Grupo Petromar">Operaciones Grupo Petromar </option>
-                            <option <?php if($empleado['puesto']=="Gerente de RRHH"){echo"selected";}?>  value="Gerente de RRHH">Gerente de RRHH </option>
-                            <option <?php if($empleado['puesto']=="Coordinador de Capital Humano"){echo"selected";}?>  value="Coordinador de Capital Humano">Coordinador de Capital Humano </option>
-                            <option <?php if($empleado['puesto']=="Encargada de Nóminas"){echo"selected";}?>  value="Encargada de Nóminas">Encargada de Nóminas </option>
-                            <option <?php if($empleado['puesto']=="Auxiliar de Sistemas"){echo"selected";}?>  value="Auxiliar de Sistemas">Auxiliar de Sistemas   </option>
-                            <option <?php if($empleado['puesto']=="Sistemas"){echo"selected";}?>  value="Sistemas">Sistemas  </option>
-                            <option <?php if($empleado['puesto']=="Aux. de desarrollo"){echo"selected";}?>  value="Aux. de desarrollo">Aux. de desarrollo </option>
-                            <option <?php if($empleado['puesto']=="Desarrollador"){echo"selected";}?>  value="Desarrollador">Desarrollador </option>
-                            <option <?php if($empleado['puesto']=="Supervisora Logistica Comercial"){echo"selected";}?>  value="Supervisora Logistica Comercial">Supervisora Logistica Comercial </option>
-                            <option <?php if($empleado['puesto']=="Logística"){echo"selected";}?>  value="Logística">Logística </option>
-                            <option <?php if($empleado['puesto']=="Gerente de Finanzas"){echo"selected";}?>  value="Gerente de Finanzas">Gerente de Finanzas  </option>
-                            <option <?php if($empleado['puesto']=="Encargado Contable Gas y Comercializadora"){echo"selected";}?>  value="Encargado Contable Gas y Comercializadora">Encargado Contable Gas y Comercializadora </option>
-                            <option <?php if($empleado['puesto']=="Supervisora de call center"){echo"selected";}?>  value="Supervisora de call center">Supervisora de call center  </option>
-                            <option <?php if($empleado['puesto']=="Call Center"){echo"selected";}?>  value="Call Center">Call Center  </option>
-                            <option <?php if($empleado['puesto']=="Gerente Operativo Gas"){echo"selected";}?>  value="Gerente Operativo Gas">Gerente Operativo Gas </option>
-                            <option <?php if($empleado['puesto']=="Encargado de Logistica"){echo"selected";}?>  value="Encargado de Logistica">Encargado de Logistica </option>
-                            <option <?php if($empleado['puesto']=="Coordinador Operativo Gas"){echo"selected";}?>  value="Coordinador Operativo Gas">Coordinador Operativo Gas </option>
-                            <option <?php if($empleado['puesto']=="Responsable Operativo de Mantenimiento y Dependencias Gas"){echo"selected";}?>  value="Responsable Operativo de Mantenimiento y Dependencias Gas">Responsable Operativo de Mantenimiento y Dependencias Gas </option>
-                            <option <?php if($empleado['puesto']=="Encargado de Mantenimiento Gas"){echo"selected";}?>  value="Encargado de Mantenimiento Gas">Encargado de Mantenimiento Gas </option>
-                            <option <?php if($empleado['puesto']=="Controles Internos Gas"){echo"selected";}?>  value="Controles Internos Gas">Controles Internos Gas </option>
-                            <option <?php if($empleado['puesto']=="Auxiliar de Planta"){echo"selected";}?>  value="Auxiliar de Planta">Auxiliar de Planta </option>
-                            <option <?php if($empleado['puesto']=="Técnico"){echo"selected";}?>  value="Técnico">Técnico  </option>
-                            <option <?php if($empleado['puesto']=="Velador"){echo"selected";}?>  value="Velador">Velador  </option>
-                            <option <?php if($empleado['puesto']=="Ayu. de operador autotanque"){echo"selected";}?>  value="Ayu. de operador autotanque">Ayu. de operador autotanque  </option>
-                            <option <?php if($empleado['puesto']=="Operador de autotanque"){echo"selected";}?>  value="Operador de autotanque">Operador de autotanque   </option>
+                        <option <?php if($empleado['puesto']=="Auxiliar de operaciones"){echo"selected";}?>  value="Auxiliar de operaciones">Auxiliar de operaciones </option>
+                        <option <?php if($empleado['puesto']=="Auxiliar Administrativo"){echo"selected";}?>  value="Auxiliar Administrativo">Auxiliar Administrativo </option>
+                        <option <?php if($empleado['puesto']=="Auxiliar Contable"){echo"selected";}?>  value="Auxiliar Contable">Auxiliar Contable  </option>
+                        <option <?php if($empleado['puesto']=="Auxiliar de Sistemas"){echo"selected";}?>  value="Auxiliar de Sistemas">Auxiliar de Sistemas   </option>
+                        <option <?php if($empleado['puesto']=="Auxiliar de desarrollo"){echo"selected";}?>  value="Auxiliar de desarrollo">Auxiliar de desarrollo </option>
+                        <option <?php if($empleado['puesto']=="Auxiliar de Planta"){echo"selected";}?>  value="Auxiliar de Planta">Auxiliar de Planta </option>
+                        <option <?php if($empleado['puesto']=="Auxiliar mantenimiento"){echo"selected";}?>  value="Auxiliar mantenimiento">Auxiliar mantenimiento </option>
+                        <option <?php if($empleado['puesto']=="Asistente de dirección"){echo"selected";}?>  value="Asistente de dirección">Asistente de dirección </option>
+                        <option <?php if($empleado['puesto']=="Atención a clientes"){echo"selected";}?>  value="Atención a clientes">Atención a clientes  </option>
+                        <option <?php if($empleado['puesto']=="Ayu. de operador autotanque"){echo"selected";}?>  value="Ayu. de operador autotanque">Ayu. de operador autotanque  </option>
+                        <option <?php if($empleado['puesto']=="Contador General"){echo"selected";}?>  value="Contador General">Contador General </option>
+                        <option <?php if($empleado['puesto']=="Control Interno"){echo"selected";}?>  value="Control Interno">Control Interno </option>
+                        <option <?php if($empleado['puesto']=="Coordinador de Capacitación y Desarrollo"){echo"selected";}?>  value="Coordinador de Capacitación y Desarrollo">Coordinador de Capacitación y Desarrollo </option>
+                        <option <?php if($empleado['puesto']=="Coordinador de Capital Humano"){echo"selected";}?>  value="Coordinador de Capital Humano">Coordinador de Capital Humano </option>
+                        <option <?php if($empleado['puesto']=="Coordinador Operativo Gas"){echo"selected";}?>  value="Coordinador Operativo Gas">Coordinador Operativo Gas </option>
+                        <option <?php if($empleado['puesto']=="Controles Internos Gas"){echo"selected";}?>  value="Controles Internos Gas">Controles Internos Gas </option>
+                        <option <?php if($empleado['puesto']=="Call Center"){echo"selected";}?>  value="Call Center">Call Center  </option>
+                        <option <?php if($empleado['puesto']=="Cubre turno"){echo"selected";}?>  value="Cubre turno">Cubre turno </option>
+                        <option <?php if($empleado['puesto']=="Despachador"){echo"selected";}?>  value="Despachador">Despachador</option> 
+                        <option <?php if($empleado['puesto']=="Desarrollador"){echo"selected";}?>  value="Desarrollador">Desarrollador </option>
+                        <option <?php if($empleado['puesto']=="Encargado de Turno"){echo"selected";}?>  value="Encargado de Turno">Encargado de Turno</option>
+                        <option <?php if($empleado['puesto']=="Encargado de Servicio y Controles Internos"){echo"selected";}?>  value="Encargado de Servicio y Controles Internos">Encargada de Servicio y Controles Internos</option>
+                        <option <?php if($empleado['puesto']=="Encargado de Compras"){echo"selected";}?>  value="Encargado de Compras">Encargado de Compras </option>
+                        <option <?php if($empleado['puesto']=="Encargado Administrativa y Dependencias"){echo"selected";}?>  value="Encargado Administrativa y Dependencias">Encargado Administrativa y Dependencias </option>
+                        <option <?php if($empleado['puesto']=="Encargado de Ingresos"){echo"selected";}?>  value="Encargado de Ingresos">Encargado de Ingresos </option>
+                        <option <?php if($empleado['puesto']=="Encargado de Nóminas"){echo"selected";}?>  value="Encargado de Nóminas">Encargado de Nóminas </option>
+                        <option <?php if($empleado['puesto']=="Encargado Contable Gas y Comercializadora"){echo"selected";}?>  value="Encargado Contable Gas y Comercializadora">Encargado Contable Gas y Comercializadora </option>
+                        <option <?php if($empleado['puesto']=="Encargado de Logistica"){echo"selected";}?>  value="Encargado de Logistica">Encargado de Logistica </option>
+                        <option <?php if($empleado['puesto']=="Encargado de Mantenimiento Gas"){echo"selected";}?>  value="Encargado de Mantenimiento Gas">Encargado de Mantenimiento Gas </option>
+                        <option <?php if($empleado['puesto']=="Ejecutivo de Negocios La Caja"){echo"selected";}?>  value="Ejecutivo de Negocios La Caja">Ejecutivo de Negocios La Caja</option>
+                        <option <?php if($empleado['puesto']=="Finanzas"){echo"selected";}?>  value="Finanzas">Finanzas</option>
+                        <option <?php if($empleado['puesto']=="Gerente Administrativo"){echo"selected";}?>  value="Gerente Administrativo">Gerente Administrativo </option>
+                        <option <?php if($empleado['puesto']=="Gerente de RRHH"){echo"selected";}?>  value="Gerente de RRHH">Gerente de RRHH </option>
+                        <option <?php if($empleado['puesto']=="Gerente de Finanzas"){echo"selected";}?>  value="Gerente de Finanzas">Gerente de Finanzas  </option>
+                        <option <?php if($empleado['puesto']=="Gerente Operativo Gas"){echo"selected";}?>  value="Gerente Operativo Gas">Gerente Operativo Gas </option>
+                        <option <?php if($empleado['puesto']=="Guardia de Seguridad"){echo"selected";}?>  value="Guardia de Seguridad">Guardia de Seguridad  </option>
+                        <option <?php if($empleado['puesto']=="Inmobiliaria"){echo"selected";}?>  value="Inmobiliaria">Inmobiliaria </option>
+                        <option <?php if($empleado['puesto']=="Logística"){echo"selected";}?>  value="Logística">Logística </option>
+                        <option <?php if($empleado['puesto']=="Limpieza"){echo"selected";}?>  value="Limpieza">Limpieza</option>
+                        <option <?php if($empleado['puesto']=="Mantenimiento"){echo"selected";}?>  value="Mantenimiento">Mantenimiento</option>
+                        <option <?php if($empleado['puesto']=="Operación Gasolineras"){echo"selected";}?>  value="Operación Gasolineras">Operación Gasolineras </option>                            
+                        <option <?php if($empleado['puesto']=="Operaciones Grupo Petromar"){echo"selected";}?> value="Operaciones Grupo Petromar">Operaciones Grupo Petromar </option>    
+                        <option <?php if($empleado['puesto']=="Operador de autotanque"){echo"selected";}?>  value="Operador de autotanque">Operador de autotanque   </option>
+                        <option <?php if($empleado['puesto']=="Pipero"){echo"selected";}?>  value="Pipero">Pipero</option>
+                        <option <?php if($empleado['puesto']=="Promoción y publicidad"){echo"selected";}?>  value="Promoción y publicidad">Promoción y publicidad  </option>                                   
+                        <option <?php if($empleado['puesto']=="Responsable Operativo y Logistica"){echo"selected";}?>  value="Responsable Operativo y Logistica">Responsable Operativo y Logistica</option>                            
+                        <option <?php if($empleado['puesto']=="Responsable de Obras y Proyectos"){echo"selected";}?>  value="Responsable de Obras y Proyectos">Responsable de Obras y Proyectos </option>
+                        <option <?php if($empleado['puesto']=="Responsable Operativo de Mantenimiento y Dependencias Gas"){echo"selected";}?>  value="Responsable Operativo de Mantenimiento y Dependencias Gas">Responsable Operativo de Mantenimiento y Dependencias Gas </option>  
+                        <option <?php if($empleado['puesto']=="Reclutamiento y Selección"){echo"selected";}?>  value="Reclutamiento y Selección">Reclutamiento y Selección </option>
+                        <option <?php if($empleado['puesto']=="Servicio y Cortes"){echo"selected";}?> value="Servicio y Cortes">Servicio y Cortes</option>                            
+                        <option <?php if($empleado['puesto']=="Seguridad"){echo"selected";}?>  value="Seguridad">Seguridad </option>                            
+                        <option <?php if($empleado['puesto']=="Supervisor Operativo"){echo"selected";}?>  value="Supervisor Operativo">Supervisor Operativo</option>
+                        <option <?php if($empleado['puesto']=="Supervisor operativo de responsabilidad legal"){echo"selected";}?>  value="Supervisor operativo de responsabilidad legal">Supervisor operativo de responsabilidad legal  </option>
+                        <option <?php if($empleado['puesto']=="Supervisora Logistica Comercial"){echo"selected";}?>  value="Supervisora Logistica Comercial">Supervisora Logistica Comercial </option>      
+                        <option <?php if($empleado['puesto']=="Supervisora de call center"){echo"selected";}?>  value="Supervisora de call center">Supervisora de call center  </option>                            
+                        <option <?php if($empleado['puesto']=="Sistemas"){echo"selected";}?>  value="Sistemas">Sistemas  </option>                        
+                        <option <?php if($empleado['puesto']=="Técnico"){echo"selected";}?>  value="Técnico">Técnico  </option>
+                        <option <?php if($empleado['puesto']=="Tesorería"){echo"selected";}?>  value="Tesorería">Tesorería </option>  
+                        <option <?php if($empleado['puesto']=="Velador"){echo"selected";}?>  value="Velador">Velador  </option>
+
                         </select>               
                     </div>
                     <div class="form-group col-md-2">
@@ -243,7 +263,7 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputSalario">Salario</label>
-                        <input type="number" class="form-control" id="salarioEmpleado" name="salarioEmpleado" placeholder="Salario"  maxlength="5" required value="<?= $empleado['salario']?>">
+                        <input type="number" class="form-control" id="salarioEmpleado" name="salarioEmpleado" placeholder="Salario"  maxlength="5"  value="<?= $empleado['salario']?>">
                     </div>
                 </div>
 
@@ -258,12 +278,14 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputBanco">Banco</label>
-                        <select id="Banco" class="form-control"  name="Banco" disabled>                                
+                        <select id="Banco" class="form-control"  name="Banco" disabled>      
+                            <option <?php if($empleado['Banco']=="N/A"){echo"selected";}?> value="N/A" selected>N/A</option>                           
                             <option value="Santander" <?php if($empleado['Banco']=="Santander"){echo"selected";}?>>Santander</option>
                             <option value="HSBC" <?php if($empleado['Banco']=="HSBC"){echo"selected";}?>>HSBC</option>
                             <option value="Banorte" <?php if($empleado['Banco']=="Banorte"){echo"selected";}?>>Banorte</option>
                             <option value="CitiBanamex" <?php if($empleado['Banco']=="CitiBanamex"){echo"selected";}?>>CitiBanamex</option>
-                            <option value="BBVA" <?php if($empleado['Banco']=="BBVA"){echo"selected";}?>>BBVA</option>                             
+                            <option value="BBVA" <?php if($empleado['Banco']=="BBVA"){echo"selected";}?>>BBVA</option>    
+                            <option value="Bancoppel" <?php if($empleado['Banco']=="Bancoppel"){echo"selected";}?>>Bancoppel </option>                         
                         </select>
                     </div>
                     <div class="form-group col-md-3">
@@ -292,38 +314,16 @@
                         <input type="text" readonly class="form-control" id="vacacionesEmpleado" name="vacacionesEmpleado" placeholder="Vacaciones">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputCamisa">Talla Camisa</label>                        
-                        <select id="camisaEmpleado" class="form-control" name="camisaEmpleado" required>
-                            <option <?php if($empleado['tallaCamisa']=="XS"){echo"selected";}?> value="XS">XS</option>
-                            <option <?php if($empleado['tallaCamisa']=="S"){echo"selected";}?> value="S">S</option>
-                            <option <?php if($empleado['tallaCamisa']=="M"){echo"selected";}?> value="M">M</option>
-                            <option <?php if($empleado['tallaCamisa']=="L"){echo"selected";}?> value="L">L</option>
-                            <option <?php if($empleado['tallaCamisa']=="XL"){echo"selected";}?> value="XL">XL</option>
-                            <option <?php if($empleado['tallaCamisa']=="2XL"){echo"selected";}?> value="2XL">2XL</option>
-                            <option <?php if($empleado['tallaCamisa']=="3XL"){echo"selected";}?> value="3XL">3XL</option>
-                            <option <?php if($empleado['tallaCamisa']=="4XL"){echo"selected";}?> value="4XL">4XL</option>                    
-                        </select>
+                        <label for="inputCamisa">Talla Camisa</label>    
+                        <input type="text" class="form-control " id="camisaEmpleado" name="camisaEmpleado" placeholder="Camisa Empleado"  required value="<?= $empleado['tallaCamisa']?>">                                        
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputPantalon" style="font-family: DejaVuSans">Talla Pantalón</label>                        
-                        <select id="pantalonEmpleado" class="form-control" name="pantalonEmpleado" required>
-                            <option <?php if($empleado['tallaPantalon']=="25"){echo"selected";}?>  value="25">25</option>
-                            <option <?php if($empleado['tallaPantalon']=="26"){echo"selected";}?>  value="26">26</option>
-                            <option <?php if($empleado['tallaPantalon']=="27"){echo"selected";}?>  value="27">27</option>
-                            <option <?php if($empleado['tallaPantalon']=="28"){echo"selected";}?>  value="28">28</option>
-                            <option <?php if($empleado['tallaPantalon']=="30"){echo"selected";}?>  value="30">30</option>
-                            <option <?php if($empleado['tallaPantalon']=="32"){echo"selected";}?>  value="32">32</option>
-                            <option <?php if($empleado['tallaPantalon']=="34"){echo"selected";}?>  value="34">34</option>
-                            <option <?php if($empleado['tallaPantalon']=="36"){echo"selected";}?>  value="36">36</option>
-                            <option <?php if($empleado['tallaPantalon']=="38"){echo"selected";}?>  value="38">38</option>
-                            <option <?php if($empleado['tallaPantalon']=="40"){echo"selected";}?>  value="40">40</option>
-                            <option <?php if($empleado['tallaPantalon']=="42"){echo"selected";}?>  value="42">42</option>
-                            <option <?php if($empleado['tallaPantalon']=="44"){echo"selected";}?>  value="44">44</option>                   
-                        </select>
+                        <label for="inputPantalon" style="font-family: DejaVuSans">Talla Pantalón</label>  
+                        <input type="text" class="form-control " id="pantalonEmpleado" name="pantalonEmpleado" placeholder="Pantalon Empleado"  required value="<?= $empleado['tallaCamisa']?>">                                                                                    
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputBotas">Talla Botas</label>
-                        <input type="number" class="form-control" id="botasEmpleado" name="botasEmpleado" placeholder="Talla Botas"  maxlength="2" required value="<?= $empleado['tallaBotas']?>">
+                        <input type="number" class="form-control" id="botasEmpleado" name="botasEmpleado" placeholder="Talla Botas"  maxlength="2"  value="<?= $empleado['tallaBotas']?>">
                     </div>
                 </div>
 
@@ -341,18 +341,22 @@
                 </div><!-- /.card-header -->
                 <div class="card-body">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="inputNombre">Nombre Completo</label>
                             <input type="text" class="form-control " id="nombreEmergencia" name="nombreEmergencia" placeholder="Nombre Completo" maxlength="100" required value="<?= $empleado['nombreEmergencia']?>">                
                         </div>            
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="inputCelularEmergencia">Celular</label>
                             <input type="tel" class="form-control"  id="celularEmergencia" name="celularEmergencia"  maxlength="10" required value="<?= $empleado['celularEmergencia']?>">            
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="inputTelefonoEmergencia">Telefono</label>
-                            <input type="tel" class="form-control"  id="telefonoEmergencia" name="telefonoEmergencia"  maxlength="10" required value="<?= $empleado['telefonoEmergencia']?>">            
+                            <input type="tel" class="form-control"  id="telefonoEmergencia" name="telefonoEmergencia"  maxlength="10"  value="<?= $empleado['telefonoEmergencia']?>">            
                         </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputParentesco">Parentesco</label>
+                            <input type="text" class="form-control " id="parentesco" name="parentesco" placeholder="Parentesco" maxlength="50" value="<?= $empleado['parentesco']?>" required>                
+                        </div> 
                     </div>
                 </div>    
             </div>
@@ -374,14 +378,68 @@
           </div>
         </div>
  
-         
-        <button type="submit" class="btn btn-success btn-lg" id="btn-actualizar"><i class="fa fa-edit"></i>ACTUALIZAR</button>                                                                                   
-
+        <?php if(session('tipo') != 3){?>    
+            <button type="submit" class="btn btn-outline-success btn-lg" id="btn-actualizar"><i class="fa fa-edit"></i>ACTUALIZAR</button>                                                                                   
+        <?php }?>
     </form>
     <br>
     <br>
 
     <br>
+
+
+    <!-- Modal PARA CARTA FONACTO -->
+    <div class="modal fade" id="ModalFonacot" tabindex="-1" role="dialog" aria-labelledby="ModalFonacot" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header formulario-agregar">
+                    <h5 class="modal-title" id="exampleModalLongTitle">CARTA FONACOT</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="<?= base_url('/cartaFonacot')?>">
+                    <div class="modal-body"> 
+
+                        <input type="hidden" name="Username" id="Username" value=<?=session('id');?>>                       
+
+                        <input type="hidden" name="idEmpleado" id="idEmpleado" value=<?=$empleado['id'];?>>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputEmpresa">Empresa</label>
+                                <select id="empresa" class="form-control" name="empresa" require>
+                                    <option value="Petromar del Pacífico S.A. de C.V.">Petromar del Pacifico</option>
+                                    <option value="Servicio Rio Presidio S.A. de C.V.">Rio Presidio</option>
+                                    <option value="Gas Unión de América S.A. de C.V">Gas Unión</option>
+                                    <option value="Apoyos Administrativos P.P.A. S.C.">Apoyos Administrativos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputEmpresa">Número Fonacot </label>
+                                <input type="text" class="form-control " id="numeroFonacot" name="numeroFonacot" placeholder="Número Fonacot" required>                                
+                            </div>
+                        </div>
+             
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputFecha">Fecha</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha" required>
+                            </div>
+                        </div>
+                                                                    
+                   
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>                        
+                        <button type="submit" class="btn btn-primary">Guardar</button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -516,21 +574,15 @@
             if( $('#infonavitEmpleado').prop('checked') ) {
                 $("#montoDescuento").attr("readonly", false); 
                 $("#montoDescuento").attr("required", true); 
+                $("#tipoCredito").attr("disabled", false);
             }else{
                 $("#montoDescuento").attr("readonly", true);
                 $("#montoDescuento").val(''); 
                 $("#montoDescuento").attr("required", false); 
+                $("#tipoCredito").attr("disabled", true);                
+                $('#tipoCredito').val("N/A").trigger('change'); 
             }
-
-            if( $('#fonacotEmpleado').prop('checked') ) {
-                $("#numeroCredito").attr("readonly", false); 
-                $("#numeroCredito").attr("required", true); 
-            }else{
-                $("#numeroCredito").attr("readonly", true);
-                $("#numeroCredito").val('');  
-                $("#numeroCredito").attr("required", false); 
-            }
-
+                           
                
             if($('#CuentaBancaria').prop('checked')){
                 $("#Banco").attr("disabled", false);
@@ -546,6 +598,7 @@
                 $("#claveInterbancaria").val(''); 
                 $("#numeroCuenta").attr("required", false); 
                 $("#claveInterbancaria").attr("required", false); 
+                $('#Banco').val("N/A").trigger('change'); 
             }
         }
     </script>

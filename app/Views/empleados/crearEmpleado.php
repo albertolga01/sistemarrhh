@@ -13,11 +13,11 @@
                 <div class="card-body">
 
                     <input type="hidden" name="Username" id="Username" value=<?=session('id');?>>  
-                   <!-- INPUT NOMBRE Y DOMICILIO-->
+                    <!-- INPUT NOMBRE Y DOMICILIO-->
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputNombre">Nombre Completo</label>
-                            <input type="text" class="form-control " id="nombreEmpleado" name="nombreEmpleado" placeholder="Nombre Completo" maxlength="100" required>                
+                            <input type="text" class="form-control " id="nombreEmpleado" name="nombreEmpleado" placeholder="Nombre Completo" maxlength="100" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputDomicilio">Domicilio</label>
@@ -27,7 +27,7 @@
                             <div class='preview'>
                                 <img  class="center-block img-thumbnail" id="output" width="100" height="100"/>
                             </div> 
-                            <input type="file" name="fotoEmpleado" id="fotoEmpleado" onchange="loadFile(event)">                          
+                            <input type="file" name="fotoEmpleado" id="fotoEmpleado" onchange="loadFile(event)" required>                          
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputTelefono">Telefono</label>
-                            <input type="tel" class="form-control"  id="telefonoEmpleado" name="telefonoEmpleado"  maxlength="10" required>            
+                            <input type="tel" class="form-control"  id="telefonoEmpleado" name="telefonoEmpleado"  maxlength="10">            
                         </div>
                     </div>
 
@@ -120,15 +120,22 @@
                         </div>
 
                         <div class="form-group col-md-2">
+                            <label for="inputMonto">Tipo Credito</label>
+                            <select id="tipoCredito" class="form-control"  name="tipoCredito" disabled>   
+                                <option value="N/A" selected>N/A</option>                             
+                                <option value="Cuota fija">Cuota fija</option>
+                                <option value="En veces salario mínimo">En veces salario mínimo</option>
+                                <option value="Porcentaje">Porcentaje</option>                                              
+                            </select>
+                            
+                        </div> 
+
+                        <div class="form-group col-md-2">
                             <div class="custom-control custom-switch" style="margin-top: 35px;display: flex;justify-content:center;">
                                 <input type="checkbox" class="custom-control-input" id="fonacotEmpleado" name="fonacotEmpleado" value=1 onchange="habilitarInputs()">
                                 <label class="custom-control-label" for="fonacotEmpleado">Fonacot</label>
                             </div> 
-                        </div> 
-                        <div class="form-group col-md-2">
-                            <label for="inputCurp">No. Credito</label>
-                            <input type="text" readonly class="form-control" id="numeroCredito" name="numeroCredito" placeholder="No. Credito">
-                        </div>
+                        </div>                                     
                     </div>
 
                     <!-- INPUT AREA, PUESTO, TIPO DE PERFIL, SALARIO-->
@@ -136,85 +143,86 @@
                         <div class="form-group col-md-4">
                             <label for="inputArea">Area</label>
                             <select id="areaEmpleado" class="form-control"  name="areaEmpleado" required>
-                                <option selected value="Rio Presidio">Rio Presidio</option>
-                                <option value="Múnich">Múnich</option>
-                                <option value="Insurgentes">Insurgentes </option>
-                                <option value="Santa Fe">Santa Fe </option>
-                                <option value="López Sáenz">López Sáenz </option>
-                                <option value="Libramiento">Libramiento</option>                                                            
-                                <option value="Ley del Mar">Ley del Mar</option>
-                                <option value="Operaciones">Operaciones </option>
+                                <option selected value="Administrativo">Administrativo</option>
                                 <option value="Competro">Competro</option>
-                                <option value="Administrativo">Administrativo</option>
                                 <option value="Contabilidad">Contabilidad </option>
-                                <option value="Recursos Humanos">Recursos Humanos </option>
-                                <option value="Sistemas y Desarrollo">Sistemas y Desarrollo</option>
-                                <option value="Logística">Logística </option>
                                 <option value="Gas Unión">Gas Unión</option>
+                                <option value="Insurgentes">Insurgentes </option>
+                                <option value="La Caja">La Caja </option>
+                                <option value="Ley del Mar">Ley del Mar</option>
+                                <option value="Libramiento">Libramiento</option> 
+                                <option value="Logística">Logística </option>
+                                <option value="López Sáenz">López Sáenz </option>
+                                <option value="Múnich">Múnich</option>
+                                <option value="Operaciones">Operaciones </option>
+                                <option value="Recursos Humanos">Recursos Humanos </option>
+                                <option  value="Rio Presidio">Rio Presidio</option>
+                                <option value="Santa Fe">Santa Fe </option>
+                                <option value="Sistemas y Desarrollo">Sistemas y Desarrollo</option>
                             </select>                
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputPuesto">Puesto</label>
                             <select id="puestoEmpleado" class="form-control"  name="puestoEmpleado" required>                    
-                                <option selected value="Despachador">Despachador</option>                     
-                                <option  value="Supervisor Operativo">Supervisor Operativo</option>
-                                <option  value="Responsable Operativo y Logistica">Responsable Operativo y Logistica</option>
-                                <option  value="Encargado de Turno">Encargado de Turno</option>
-                                <option  value="Mantenimiento">Mantenimiento</option>
-                                <option  value="Limpieza">Limpieza</option>
-                                <option  value="Servicio y Cortes">Servicio y Cortes</option>
-                                <option  value="Encargada de Servicio y Controles Internos">Encargada de Servicio y Controles Internos</option>
-                                <option  value="Pipero">Pipero</option>                                   
-                                <option  value="Seguridad">Seguridad </option>
-                                <option  value="Cubre turno">Cubre turno </option>
-                                <option  value="Operación Gasolineras">Operación Gasolineras </option>
-                                <option  value="Auxiliar de operaciones">Auxiliar de operaciones </option>
-                                <option  value="Supervisor operativo de responsabilidad legal">Supervisor operativo de responsabilidad legal  </option>
-                                <option  value="Auxiliar mantenimiento">Auxiliar mantenimiento </option>
+                                <option selected value="Auxiliar de operaciones">Auxiliar de operaciones </option>                                
+                                <option  value="Auxiliar Administrativo">Auxiliar Administrativo </option>
+                                <option  value="Auxiliar Contable">Auxiliar Contable  </option>
+                                <option  value="Auxiliar de Sistemas">Auxiliar de Sistemas   </option>
+                                <option  value="Auxiliar de desarrollo">Auxiliar de desarrollo </option>
+                                <option  value="Auxiliar de Planta">Auxiliar de Planta </option>
+                                <option  value="Auxiliar mantenimiento">Auxiliar mantenimiento </option>                                                                
                                 <option  value="Asistente de dirección">Asistente de dirección </option>
-                                <option  value="Encargado de Compras">Encargado de Compras </option>
                                 <option  value="Atención a clientes">Atención a clientes  </option>
+                                <option  value="Ayu. de operador autotanque">Ayu. de operador autotanque  </option>
+                                <option  value="Contador General">Contador General </option>
+                                <option  value="Control Interno">Control Interno </option>
+                                <option  value="Coordinador de Capacitación y Desarrollo">Coordinador de Capacitación y Desarrollo </option>
+                                <option  value="Coordinador de Capital Humano">Coordinador de Capital Humano </option>
+                                <option  value="Coordinador Operativo Gas">Coordinador Operativo Gas </option>
+                                <option  value="Controles Internos Gas">Controles Internos Gas </option>
+                                <option  value="Call Center">Call Center  </option>
+                                <option  value="Cubre turno">Cubre turno </option>
+                                <option  value="Despachador">Despachador</option>  
+                                <option  value="Desarrollador">Desarrollador </option>
+                                <option  value="Encargado de Turno">Encargado de Turno</option>
+                                <option  value="Encargado de Servicio y Controles Internos">Encargado de Servicio y Controles Internos</option>
+                                <option  value="Encargado de Compras">Encargado de Compras </option>
+                                <option  value="Encargado Administrativa y Dependencias">Encargado Administrativa y Dependencias </option>
+                                <option  value="Encargado de Ingresos">Encargado de Ingresos </option>
+                                <option  value="Encargado de Nóminas">Encargado de Nóminas </option>
+                                <option  value="Encargado Contable Gas y Comercializadora">Encargado Contable Gas y Comercializadora </option>
+                                <option  value="Encargado de Logistica">Encargado de Logistica </option>
+                                <option  value="Encargado de Mantenimiento Gas">Encargado de Mantenimiento Gas </option>
                                 <option  value="Ejecutivo de Negocios La Caja">Ejecutivo de Negocios La Caja</option>
                                 <option  value="Finanzas">Finanzas</option>
-                                <option  value="Encargada Administrativa y Dependencias">Encargada Administrativa y Dependencias </option>
-                                <option  value="Auxiliar Administrativo">Auxiliar Administrativo </option>
-                                <option  value="Tesorería">Tesorería </option>
                                 <option  value="Gerente Administrativo">Gerente Administrativo </option>
-                                <option  value="Inmobiliaria">Inmobiliaria </option>
-                                <option  value="Responsable de Obras y Proyectos">Responsable de Obras y Proyectos </option>
-                                <option  value="Promoción y publicidad">Promoción y publicidad  </option>
-                                <option  value="Contador General">Contador General </option>
-                                <option  value="Auxiliar Contable">Auxiliar Contable  </option>
-                                <option  value="Control Interno">Control Interno </option>
-                                <option  value="Encargada de Ingresos">Encargada de Ingresos </option>
-                                <option  value="Guardia de Seguridad">Guardia de Seguridad  </option>
-                                <option  value="Coordinador de Capacitación y Desarrollo">Coordinador de Capacitación y Desarrollo </option>
-                                <option  value="Reclutamiento y Selección">Reclutamiento y Selección </option>
-                                <option  value="Operaciones Grupo Petromar">Operaciones Grupo Petromar </option>
                                 <option  value="Gerente de RRHH">Gerente de RRHH </option>
-                                <option  value="Coordinador de Capital Humano">Coordinador de Capital Humano </option>
-                                <option  value="Encargada de Nóminas">Encargada de Nóminas </option>
-                                <option  value="Auxiliar de Sistemas">Auxiliar de Sistemas   </option>
-                                <option  value="Sistemas">Sistemas  </option>
-                                <option  value="Aux. de desarrollo">Aux. de desarrollo </option>
-                                <option  value="Desarrollador">Desarrollador </option>
-                                <option  value="Supervisora Logistica Comercial">Supervisora Logistica Comercial </option>
-                                <option  value="Logística">Logística </option>
                                 <option  value="Gerente de Finanzas">Gerente de Finanzas  </option>
-                                <option  value="Encargado Contable Gas y Comercializadora">Encargado Contable Gas y Comercializadora </option>
-                                <option  value="Supervisora de call center">Supervisora de call center  </option>
-                                <option  value="Call Center">Call Center  </option>
                                 <option  value="Gerente Operativo Gas">Gerente Operativo Gas </option>
-                                <option  value="Encargado de Logistica">Encargado de Logistica </option>
-                                <option  value="Coordinador Operativo Gas">Coordinador Operativo Gas </option>
-                                <option  value="Responsable Operativo de Mantenimiento y Dependencias Gas">Responsable Operativo de Mantenimiento y Dependencias Gas </option>
-                                <option  value="Encargado de Mantenimiento Gas">Encargado de Mantenimiento Gas </option>
-                                <option  value="Controles Internos Gas">Controles Internos Gas </option>
-                                <option  value="Auxiliar de Planta">Auxiliar de Planta </option>
-                                <option  value="Técnico">Técnico  </option>
-                                <option  value="Velador">Velador  </option>
-                                <option  value="Ayu. de operador autotanque">Ayu. de operador autotanque  </option>
+                                <option  value="Guardia de Seguridad">Guardia de Seguridad  </option>
+                                <option  value="Inmobiliaria">Inmobiliaria </option>
+                                <option  value="Logística">Logística </option>
+                                <option  value="Limpieza">Limpieza</option>
+                                <option  value="Mantenimiento">Mantenimiento</option>
+                                <option  value="Operación Gasolineras">Operación Gasolineras </option>
+                                <option  value="Operaciones Grupo Petromar">Operaciones Grupo Petromar </option>
                                 <option  value="Operador de autotanque">Operador de autotanque   </option>
+                                <option  value="Pipero">Pipero</option>          
+                                <option  value="Promoción y publicidad">Promoción y publicidad  </option>
+                                <option  value="Responsable Operativo y Logistica">Responsable Operativo y Logistica</option>
+                                <option  value="Responsable de Obras y Proyectos">Responsable de Obras y Proyectos </option>
+                                <option  value="Responsable Operativo de Mantenimiento y Dependencias Gas">Responsable Operativo de Mantenimiento y Dependencias Gas </option>
+                                <option  value="Reclutamiento y Selección">Reclutamiento y Selección </option>
+                                <option  value="Servicio y Cortes">Servicio y Cortes</option>    
+                                <option  value="Seguridad">Seguridad </option>     
+                                <option  value="Supervisor Operativo">Supervisor Operativo</option>
+                                <option  value="Supervisor operativo de responsabilidad legal">Supervisor operativo de responsabilidad legal  </option>
+                                <option  value="Supervisora Logistica Comercial">Supervisora Logistica Comercial </option>
+                                <option  value="Supervisora de call center">Supervisora de call center  </option>
+                                <option  value="Sistemas">Sistemas  </option>
+                                <option  value="Técnico">Técnico  </option>
+                                <option  value="Tesorería">Tesorería </option> 
+                                <option  value="Velador">Velador  </option>
                             </select>               
                         </div>
                         <div class="form-group col-md-2">
@@ -240,12 +248,14 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputBanco">Banco</label>
-                            <select id="Banco" class="form-control"  name="Banco" disabled>                                
-                                <option value="Santander" selected>Santander</option>
+                            <select id="Banco" class="form-control"  name="Banco" disabled>
+                                <option value="N/A" selected>N/A</option>                                   
+                                <option value="Santander" >Santander</option>
                                 <option value="HSBC">HSBC</option>
                                 <option value="Banorte">Banorte</option>
                                 <option value="CitiBanamex">CitiBanamex</option>
-                                <option value="BBVA">BBVA</option>                             
+                                <option value="BBVA">BBVA</option>
+                                <option value="Bancoppel">Bancoppel </option>                           
                             </select>
                         </div>
                         <div class="form-group col-md-3">
@@ -275,37 +285,15 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputCamisa">Talla Camisa</label>                
-                            <select id="camisaEmpleado" class="form-control" name="camisaEmpleado" required>
-                                <option selected value="XS">XS</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                                <option value="2XL">2XL</option>
-                                <option value="3XL">3XL</option>
-                                <option value="4XL">4XL</option>                    
-                            </select>
+                            <input type="text" class="form-control " id="camisaEmpleado" name="camisaEmpleado" placeholder="Camisa Empleado"  required>
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="inputPantalon">Talla Pantalón</label>                
-                            <select id="pantalonEmpleado" class="form-control" name="pantalonEmpleado" required>
-                                <option selected value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="30">30</option>
-                                <option value="32">32</option>
-                                <option value="34">34</option>
-                                <option value="36">36</option>
-                                <option value="38">38</option>
-                                <option value="40">40</option>
-                                <option value="42">42</option>
-                                <option value="44">44</option>                   
-                            </select>
+                            <label for="inputPantalon">Talla Pantalón</label>        
+                            <input type="text" class="form-control " id="pantalonEmpleado" name="pantalonEmpleado" placeholder="Pantalon Empleado"  required>                               
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputBotas">Talla Botas</label>
-                            <input type="number" class="form-control" id="botasEmpleado" name="botasEmpleado" placeholder="Talla Botas"  maxlength="2" required>
+                            <input type="number" class="form-control" id="botasEmpleado" name="botasEmpleado" placeholder="Talla Botas"  maxlength="2">
                         </div>
                     </div>
 
@@ -324,18 +312,22 @@
                 </div><!-- /.card-header -->
                 <div class="card-body">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="inputNombre">Nombre Completo</label>
                             <input type="text" class="form-control " id="nombreEmergencia" name="nombreEmergencia" placeholder="Nombre Completo" maxlength="100" required>                
                         </div>            
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="inputCelularEmergencia">Celular</label>
                             <input type="tel" class="form-control"  id="celularEmergencia" name="celularEmergencia"  maxlength="10" required>            
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label for="inputTelefonoEmergencia">Telefono</label>
-                            <input type="tel" class="form-control"  id="telefonoEmergencia" name="telefonoEmergencia"  maxlength="10" required>            
+                            <input type="tel" class="form-control"  id="telefonoEmergencia" name="telefonoEmergencia"  maxlength="10">            
                         </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputParentesco">Parentesco</label>
+                            <input type="text" class="form-control " id="parentesco" name="parentesco" placeholder="Parentesco" maxlength="50" required>                
+                        </div>  
                     </div>
                 </div>    
             </div>
@@ -466,19 +458,13 @@
             if( $('#infonavitEmpleado').prop('checked') ) {
                 $("#montoDescuento").attr("readonly", false); 
                 $("#montoDescuento").attr("required", true); 
+                $("#tipoCredito").attr("disabled", false);
             }else{
                 $("#montoDescuento").attr("readonly", true);
                 $("#montoDescuento").val(''); 
                 $("#montoDescuento").attr("required", false); 
-            }
-
-            if( $('#fonacotEmpleado').prop('checked') ) {
-                $("#numeroCredito").attr("readonly", false); 
-                $("#numeroCredito").attr("required", true); 
-            }else{
-                $("#numeroCredito").attr("readonly", true);
-                $("#numeroCredito").val('');  
-                $("#numeroCredito").attr("required", false); 
+                $("#tipoCredito").attr("disabled", true);
+                $('#tipoCredito').val("N/A").trigger('change'); 
             }
 
             
@@ -496,6 +482,7 @@
                 $("#claveInterbancaria").val(''); 
                 $("#numeroCuenta").attr("required", false); 
                 $("#claveInterbancaria").attr("required", false); 
+                $('#Banco').val("N/A").trigger('change'); 
             }
         }
         

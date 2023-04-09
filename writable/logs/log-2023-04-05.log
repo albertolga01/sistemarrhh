@@ -1,0 +1,9 @@
+CRITICAL - 2023-04-05 12:44:38 --> syntax error, unexpected '?>'
+in APPPATH/Views/empleados/cartaEmpleado.php on line 9.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render('empleados/cartaEmpleado', [], true)
+ 3 APPPATH/Controllers/EmpleadoController.php(299): view('empleados/cartaEmpleado', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\EmpleadoController->cartaEmpleado('11')
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

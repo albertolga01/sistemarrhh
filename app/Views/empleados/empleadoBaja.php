@@ -36,7 +36,12 @@
                                 <th>Puesto </th>
                                 <th>Fecha Baja </th>  
                                 <th>Editar </th> 
-                                <th>Alta</th>                                                        
+                                <?php if(session('tipo') != 3){?>    
+                                    <th>Alta</th>  
+                                <?php }?>
+                                <?php if(session('tipo') == 1){?> 
+                                    <th style="width: 100px;text-align: center;">Expedientes</th> 
+                                <?php }?>                                                      
                             </tr>
                         </thead>
                         <tbody>  
@@ -50,11 +55,18 @@
                                 <td><?= $empleados['puesto'];?></td> 
                                 <td><?= $fechaBaja->format("Y-m-d");?></td> 
                                 <td>                                                     
-                                   <a href="<?= base_url('editEmpleado/'.$empleados['id']);?>"><button type="submit" name="edit_btn"  class="btn btn-info"><i class="nav-icon fa fa-address-card "></i>  INFO</button></a>                           
-                                </td>          
-                                <td>                                             
-                                    <button onclick="mensajeAlta('<?= base_url('altaEmpleado/'.$empleados['id']);?>')" type="submit" id="alta_btn" name="alta_btn" class="btn btn-success"> <i class="nav-icon fa fa-user-plus"></i>  ALTA</button>
-                                </td>                     
+                                   <a href="<?= base_url('editEmpleado/'.$empleados['id']);?>"><button type="submit" name="edit_btn" class="btn btn-outline-info btn-edit" ><i class="nav-icon fa fa-address-card "></i>  INFO</button></a>                           
+                                </td> 
+                                <?php if(session('tipo') != 3){?>             
+                                    <td>                                             
+                                        <button onclick="mensajeAlta('<?= base_url('altaEmpleado/'.$empleados['id']);?>')" type="submit" id="alta_btn" name="alta_btn" class="btn btn-outline-success"> <i class="nav-icon fa fa-user-plus"></i>  ALTA</button>
+                                    </td> 
+                                <?php }?>  
+                                <?php if(session('tipo') == 1){?> 
+                                    <td>       
+                                        <a href="<?= base_url('expedientesEmpleado/'.$empleados['id']);?>"><button type="submit" name="expediente_btn" class="btn btn-outline-info" ><i class="nav-icon fas fa-archive"></i>  ARCHIVOS</button></a>                           
+                                    </td>
+                                <?php }?>                     
                             </tr>   
                             <?php endforeach;?> 
                         </tbody>

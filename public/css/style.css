@@ -11,10 +11,15 @@
     font-family:DejaVuSans;
 }
 
+.fuenteGuarderia{
+    font-size:22px;
+    font-family:DejaVuSans;
+}
+
 .ocancelada { position: relative; float: right;} 
 .ocancelada::before { 
     content: "";
-    background-image:url('../dist/img/prueba.png');
+    background-image:url('../dist/img/pieApoyos.jpg');
     background-size: 500px 500px; 
     background-repeat: no-repeat;
     position: absolute; 
@@ -36,3 +41,17 @@
     width: 50%;
     margin: 0 auto;
 }
+
+
+.formulario-agregar{
+    background-color: #28a745;
+    color: white;
+}
+
+
+.formulario-editar{
+    background-color: #17a2b8;
+    color: white;
+}
+
+

@@ -11,6 +11,6 @@ class Empleado extends Model{
                                     'tipoSangre','puesto','area','tipoPerfil','celular','telefono','salario',
                                     'fechaIngreso','tallaCamisa','tallaPantalon','tallaBotas','foto','nombreEmergencia',
                                     'celularEmergencia','telefonoEmergencia','activo','observaciones','fechaBaja',
-                                    'numeroSeguro','estadoCivil','infonavitEmpleado','montoDescuento','fonacotEmpleado','numeroCredito',
-                                    'CuentaBancaria','Banco','numeroCuenta','claveInterbancaria'];  
+                                    'numeroSeguro','estadoCivil','infonavitEmpleado','montoDescuento','fonacotEmpleado',
+                                    'CuentaBancaria','Banco','numeroCuenta','claveInterbancaria','parentesco','tipoCredito'];  
 }

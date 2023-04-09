@@ -1,0 +1,32 @@
+CRITICAL - 2023-04-04 18:54:10 --> The original file is not a valid file.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 137.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH/Controllers/EmpleadoController.php(39): CodeIgniter\HTTP\Files\UploadedFile->move('FCPATH/public/uploads', '1680652450_31a5567c8b0faa67cf36.jpg')
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\EmpleadoController->guardarEmpleado()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-04 18:54:50 --> The original file is not a valid file.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 137.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH/Controllers/EmpleadoController.php(39): CodeIgniter\HTTP\Files\UploadedFile->move('FCPATH/public/uploads', '1680652490_0f56a7fffd7a940438a1.jpg')
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\EmpleadoController->guardarEmpleado()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-04 18:56:01 --> The original file is not a valid file.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 137.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH/Controllers/EmpleadoController.php(39): CodeIgniter\HTTP\Files\UploadedFile->move('FCPATH/public/uploads', '1680652561_541642ef2d25d3d0f8df.jpg')
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\EmpleadoController->guardarEmpleado()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-04 18:57:29 --> The original file is not a valid file.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 137.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH/Controllers/EmpleadoController.php(39): CodeIgniter\HTTP\Files\UploadedFile->move('FCPATH/public/uploads', '1680652649_a1cca78e1dd902db6313.jpg')
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\EmpleadoController->guardarEmpleado()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmpleadoController))
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

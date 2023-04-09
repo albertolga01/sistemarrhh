@@ -71,7 +71,8 @@ class UserController extends Controller{
         $data=[
             'username'=> $this->request->getVar('username'),
             'email'=> $this->request->getVar('email'),
-            'password'=> $this->request->getVar('password')                
+            'password'=> $this->request->getVar('password'),
+            'tipo' =>$this->request->getVar('tipo')                    
         ];
         $id = $this->request->getVar('id');
 

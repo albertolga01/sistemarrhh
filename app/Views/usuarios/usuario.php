@@ -30,6 +30,7 @@
                             <select class="form-control" name="tipo" id="tipo" required>
                                 <option value=1>Administrador</option>
                                 <option value=2>Normal</option>
+                                <option value=3>Solo Lectura</option>
                             </select>
                         </div>
                         <div class="form-group">

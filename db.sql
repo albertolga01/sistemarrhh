@@ -26,7 +26,7 @@ CREATE TABLE `actividades` (
   `cambio` varchar(100) DEFAULT NULL,
   `fechaCambio` date DEFAULT NULL,
   PRIMARY KEY (`idActividades`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 
 /*Table structure for table `candidatos` */
 
@@ -40,10 +40,10 @@ CREATE TABLE `candidatos` (
   `referencias` text,
   `comentarios` text,
   `puesto` varchar(50) DEFAULT NULL,
-  `telefono` varchar(12) DEFAULT NULL,
+  `telefono` varchar(10) DEFAULT NULL,
   `correo` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idcandidato`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Table structure for table `empleados` */
 
@@ -65,7 +65,7 @@ CREATE TABLE `empleados` (
   `telefono` varchar(10) DEFAULT NULL,
   `salario` float DEFAULT NULL,
   `fechaIngreso` date NOT NULL,
-  `tallaCamisa` int(11) NOT NULL,
+  `tallaCamisa` varchar(10) NOT NULL,
   `tallaPantalon` int(11) DEFAULT NULL,
   `tallaBotas` int(11) DEFAULT NULL,
   `foto` varchar(80) NOT NULL,
@@ -80,13 +80,14 @@ CREATE TABLE `empleados` (
   `infonavitEmpleado` tinyint(4) DEFAULT NULL,
   `montoDescuento` float DEFAULT NULL,
   `fonacotEmpleado` tinyint(4) DEFAULT NULL,
-  `numeroCredito` varchar(20) DEFAULT NULL,
   `CuentaBancaria` tinyint(4) DEFAULT NULL,
   `Banco` varchar(45) DEFAULT NULL,
   `numeroCuenta` varchar(10) DEFAULT NULL,
   `claveInterbancaria` varchar(18) DEFAULT NULL,
+  `parentesco` varchar(50) DEFAULT NULL,
+  `tipoCredito` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `hijos` */
 
@@ -98,7 +99,7 @@ CREATE TABLE `hijos` (
   `fechaNacimiento` datetime DEFAULT NULL,
   `idEmpleado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Table structure for table `uniformes` */
 
@@ -113,7 +114,7 @@ CREATE TABLE `uniformes` (
   `botas` tinyint(1) NOT NULL,
   `fechaEntrega` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `usuarios` */
 
@@ -126,7 +127,7 @@ CREATE TABLE `usuarios` (
   `password` varchar(255) NOT NULL,
   `tipo` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

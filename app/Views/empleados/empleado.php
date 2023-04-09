@@ -9,12 +9,13 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Empleados
-            
-                    <a href="<?= base_url('crearEmpleado') ?>">
-                        <button type="button" class="btn btn-success addUser">
-                            <i class="nav-icon fas fa-user-plus"></i>   AGREGAR 
-                        </button>
-                    </a>                          
+                    <?php if(session('tipo') != 3){?>    
+                        <a href="<?= base_url('crearEmpleado') ?>">
+                            <button type="button" class="btn btn-success addUser">
+                                <i class="nav-icon fas fa-user-plus"></i>   AGREGAR 
+                            </button>
+                        </a>    
+                    <?php }?>                      
                 </h6>
             </div>
 
@@ -42,8 +43,14 @@
                                 <th>Area </th>    
                                 <th>Puesto </th>
                                 <th>Fecha Ingreso </th>  
-                                <th>Editar </th> 
-                                <th>Dar de Baja</th>                                                                                     
+                                <th style="width: 82.5781px;text-align: center;">Editar </th> 
+                                <?php if(session('tipo') != 3){?>
+                                    <th>Dar de Baja</th> 
+                                <?php }?>
+                                <?php if(session('tipo') == 1){?> 
+                                    <th style="width: 100px;text-align: center;">Expedientes</th> 
+                                <?php }?>
+                                                                                    
                             </tr>
                         </thead>
                         <tbody>  
@@ -57,11 +64,18 @@
                                 <td><?= $empleados['puesto'];?></td> 
                                 <td><?= $fechaIngreso->format("Y-m-d");?></td> 
                                 <td>                                                     
-                                   <a href="<?= base_url('editEmpleado/'.$empleados['id']);?>"><button type="submit" name="edit_btn" class="btn btn-info"><i class="nav-icon fa fa-address-card "></i>  EDITAR</button></a>                           
-                                </td>          
-                                <td>         
-                                    <button onclick="mensajeBaja('<?= base_url('deleteEmpleado/'.$empleados['id']).'/'.session('id');?>')" type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger"> <i class="nav-icon fa fa-user-times"></i>  BAJA</button>
-                                </td>                                                     
+                                   <a href="<?= base_url('editEmpleado/'.$empleados['id']);?>"><button type="submit" name="edit_btn" class="btn btn-outline-info"><i class="nav-icon fa fa-address-card "></i> EDITAR</button></a>                           
+                                </td>
+                                <?php if(session('tipo') != 3){?>          
+                                    <td>         
+                                        <button onclick="mensajeBaja('<?= base_url('deleteEmpleado/'.$empleados['id']).'/'.session('id');?>')" type="submit" id="delete_btn" name="delete_btn" class="btn btn-outline-danger"> <i class="nav-icon fa fa-user-times"></i>  BAJA</button>
+                                    </td>   
+                                <?php }?>  
+                                <?php if(session('tipo') == 1){?> 
+                                    <td>       
+                                        <a href="<?= base_url('expedientesEmpleado/'.$empleados['id']);?>"><button type="submit" name="expediente_btn" class="btn btn-outline-info" ><i class="nav-icon fas fa-archive"></i>  ARCHIVOS</button></a>                           
+                                    </td>
+                                <?php }?>                                            
                             </tr>                           
                             <?php endforeach;?> 
                         </tbody>

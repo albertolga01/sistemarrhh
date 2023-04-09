@@ -32,6 +32,8 @@ class EmpleadoController extends Controller{
     public function guardarEmpleado(){
         $empleado = new Empleado();
 
+       
+
         $fotoEmpleado = $this->request->getFile('fotoEmpleado');
         $nuevoNombre= $fotoEmpleado->getRandomName();
         $fotoEmpleado->move(ROOTPATH.'public/uploads', $nuevoNombre); //PARA SUBIR LA FOTO AL SERVIDOR        
@@ -41,7 +43,12 @@ class EmpleadoController extends Controller{
         if( $infonavitEmpleado != 1){$infonavitEmpleado = 0;}
 
         $fonacotEmpleado =$this->request->getVar('fonacotEmpleado');
-        if($fonacotEmpleado  != 1){$fonacotEmpleado = 0;}
+        if($fonacotEmpleado  != 1){
+            $fonacotEmpleado = 0;
+            $tipoCredito= "N/A";
+        }else{
+            $tipoCredito = $this->request->getVar('tipoCredito');
+        }
 
         $CuentaBancaria =$this->request->getVar('CuentaBancaria');
         if($CuentaBancaria  != 1){
@@ -80,12 +87,13 @@ class EmpleadoController extends Controller{
             'estadoCivil'=> $this->request->getVar('estadoCivil'),
             'infonavitEmpleado'=> $infonavitEmpleado,
             'montoDescuento'=> $this->request->getVar('montoDescuento'),
-            'fonacotEmpleado'=> $fonacotEmpleado,
-            'numeroCredito'=> $this->request->getVar('numeroCredito'),
+            'fonacotEmpleado'=> $fonacotEmpleado,            
             'CuentaBancaria' => $this->request->getVar('CuentaBancaria'),
             'Banco' => $Banco,
             'numeroCuenta'=> $this->request->getVar('numeroCuenta'),
-            'claveInterbancaria' => $this->request->getVar('claveInterbancaria')
+            'claveInterbancaria' => $this->request->getVar('claveInterbancaria'),
+            'parentesco' => $this->request->getVar('parentesco'),
+            'tipoCredito' =>$tipoCredito
         ];
        
         $empleado->insert($datos);  
@@ -123,6 +131,9 @@ class EmpleadoController extends Controller{
         $fonacotEmpleado =$this->request->getVar('fonacotEmpleado');
         if($fonacotEmpleado  != 1){
             $fonacotEmpleado = 0;
+            $tipoCredito= "N/A";
+        }else{
+            $tipoCredito = $this->request->getVar('tipoCredito');
         }
 
         $CuentaBancaria =$this->request->getVar('CuentaBancaria');
@@ -169,12 +180,13 @@ class EmpleadoController extends Controller{
                 'estadoCivil'=> $this->request->getVar('estadoCivil'),
                 'infonavitEmpleado'=> $infonavitEmpleado,
                 'montoDescuento'=> $this->request->getVar('montoDescuento'),
-                'fonacotEmpleado'=> $fonacotEmpleado,
-                'numeroCredito'=> $this->request->getVar('numeroCredito'),
+                'fonacotEmpleado'=> $fonacotEmpleado,                
                 'CuentaBancaria' => $this->request->getVar('CuentaBancaria'),
                 'Banco' => $Banco,
                 'numeroCuenta'=> $this->request->getVar('numeroCuenta'),
-                'claveInterbancaria' => $this->request->getVar('claveInterbancaria')
+                'claveInterbancaria' => $this->request->getVar('claveInterbancaria'),
+                'parentesco' => $this->request->getVar('parentesco'),
+                'tipoCredito' =>  $tipoCredito
             ];
             
            $empleado->update($id,$datos);
@@ -218,12 +230,13 @@ class EmpleadoController extends Controller{
                 'estadoCivil'=> $this->request->getVar('estadoCivil'),
                 'infonavitEmpleado'=> $infonavitEmpleado,
                 'montoDescuento'=> $this->request->getVar('montoDescuento'),
-                'fonacotEmpleado'=> $fonacotEmpleado,
-                'numeroCredito'=> $this->request->getVar('numeroCredito'),
+                'fonacotEmpleado'=> $fonacotEmpleado,                
                 'CuentaBancaria' => $this->request->getVar('CuentaBancaria'),
                 'Banco' => $Banco,
                 'numeroCuenta'=> $this->request->getVar('numeroCuenta'),
-                'claveInterbancaria' => $this->request->getVar('claveInterbancaria')  
+                'claveInterbancaria' => $this->request->getVar('claveInterbancaria'),
+                'parentesco' => $this->request->getVar('parentesco'),
+                'tipoCredito' =>  $tipoCredito
             ];        
                       
             $empleado->update($id,$datos);
@@ -291,6 +304,33 @@ class EmpleadoController extends Controller{
         $data['pageTitle']= 'CheckList Baja Empleado';
         $data['empleado'] = $empleado->where('id',$id)->first();
         return view('empleados/checkListEmpleado',$data);
+    }
+
+    public function cartaGuarderia($id=null){
+        $empleado = new Empleado();
+        $data['pageTitle']= 'Carta Guarderia';
+        $data['empleado'] = $empleado->where('id',$id)->first();
+        return view('empleados/cartaGuarderia',$data);
+    }
+
+    public function cartaFonacot(){
+        $empresa =$this->request->getVar('empresa');
+        $numeroFonacot =$this->request->getVar('numeroFonacot');
+        $fecha =$this->request->getVar('fecha');
+        $idEmpleado =$this->request->getVar('idEmpleado');
+
+        $empleado = new Empleado();
+        $data['pageTitle']= 'Carta Fonacot';
+        $data['empleado'] = $empleado->where('id',$idEmpleado)->first();              
+        $data['datosFonacot'] =["empresa" =>$empresa,"numeroFonacot" =>$numeroFonacot,"fecha" =>$fecha ];                
+        return view('empleados/cartaFonacot',$data);
+    }
+
+    public function expedientesEmpleado($id=null){
+        $empleado = new Empleado();
+        $data['pageTitle']= 'Expedientes';
+        $data['empleado'] = $empleado->where('id',$id)->first();
+        return view('empleados/expedientes',$data);
     }
 
 

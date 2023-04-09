@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GrupoPetromar</title>
+  <title>Sistema RH</title>
   <base href="/public/">
   <link rel="icon" href="<?php echo base_url(); ?>/public/dist/img/favicon.ico" type="image/gif">  
    <!-- Css -->
@@ -149,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="nav-item">
               <a href="..<?= route_to('actividades');?>" class="nav-link <?= (current_url() == base_url('actividades')) ? 'active' : '';?>">
                 <i class="nav-icon 	fas fa-sync"></i>                
-                <p>Actividades</p>
+                <p>Historial</p>
               </a>
             </li>
 
@@ -214,12 +214,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
+ 
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="<?= base_url();?>">GrupoPetromar</a>.</strong>
+    <strong>Copyright &copy; 2022-2023 <a href="<?= base_url();?>">GrupoPetromar</a>.</strong>
   </footer>
 </div>
 <!-- ./wrapper -->

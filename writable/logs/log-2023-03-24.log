@@ -1,0 +1,9 @@
+CRITICAL - 2023-03-24 12:31:12 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+in APPPATH/Views/hijos/hijos.php on line 105.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1134): CodeIgniter\View\View->render('hijos/hijos', [], true)
+ 3 APPPATH/Controllers/HijoController.php(22): view('hijos/hijos', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\HijoController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HijoController))
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
